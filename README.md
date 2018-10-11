@@ -22,6 +22,22 @@ and [Docker Compose](https://docs.docker.com/compose/install/) installed to run 
 
 - visit the app on localhost:4000
 
+## Deploy on Heroku
+
+Method based on https://hexdocs.pm/phoenix/heroku.html
+
+- Create the Heroku application
+  `heroku create --buildpack "https://github.com/HashNuke/heroku-buildpack-elixir.git"`
+  this will create a generated name for the app, ex: `tranquil-ravine-86379`
+
+- Check that the new heroku remote has been added to git
+  `git remote -v`
+
+- Add the static buildpack
+  `heroku buildpacks:add https://github.com/gjaldon/heroku-buildpack-phoenix-static.git`
+
+- Add the secret key base environment variable in Heroku
+
 ## Create a new Phoenix application with Docker
 
 You don't need to do this section as the application is now generated.

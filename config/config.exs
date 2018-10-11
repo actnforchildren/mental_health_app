@@ -12,7 +12,7 @@ config :afc,
 # Configures the endpoint
 config :afc, AfcWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "oTbhiz2tZuc4zX3vuclM/o+mgWJXi7rkqi1NWCF2ICboRbEriudUTxs+ogkcI2Ur",
+  secret_key_base: "LA+CaY7hG93NGEN7LKUPuSbtPJBoiw56kk2WfwT9sy/J9QZjcehCpkHu9NW8rzW5",
   render_errors: [view: AfcWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Afc.PubSub,
            adapter: Phoenix.PubSub.PG2]
