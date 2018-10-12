@@ -40,6 +40,7 @@ defmodule AfcWeb do
       import AfcWeb.Router.Helpers
       import AfcWeb.ErrorHelpers
       import AfcWeb.Gettext
+      import AfcWeb.ComponentHelpers
     end
   end
 

@@ -7,20 +7,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Afc!</title>
+    <title>Action for Children</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
 
   </head>
 
   <body>
-    <div class="">
-
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
-
-    </div> <!-- /container -->
+    <%= component "navbar", [] %>
+    <main role="main">
+      <%= render @view_module, @view_template, assigns %>
+    </main>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
