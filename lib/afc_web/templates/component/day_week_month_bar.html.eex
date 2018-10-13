@@ -1,0 +1,15 @@
+<div class="flex justify-between fixed top-0 h-day-week-month w-100 tc bg-white">
+  <!-- the border classes on this elem will need to be added depending on -->
+  <!-- the page the user is on. Leaving in for now so we remember the classes -->
+  <a class="flex db pointer link black f4 w-33 bb bw2" href="/">
+    <p class="w-100 self-center">Daily</p>
+  </a>
+
+  <a class="flex db pointer link black f4 w-33" href="/">
+    <p class="w-100 self-center">Weekly</p>
+  </a>
+
+  <a class="flex db pointer link black f4 w-33" href="/">
+    <p class="w-100 self-center">Monthly</p>
+  </a>
+</div>
