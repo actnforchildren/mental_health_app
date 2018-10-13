@@ -1,0 +1,14 @@
+{
+  "coverage_options": {
+    "minimum_coverage": 10
+  },
+  "skip_files": [
+    "lib/afc.ex",
+    "lib/afc_web.ex",
+    "lib/afc_web/channels",
+    "lib/afc_web/router.ex",
+    "lib/afc_web/views/error_helpers.ex",
+    "test/support/channel_case.ex",
+    "test/support/data_case.ex"
+  ]
+}
