@@ -10,14 +10,16 @@
     <title>Action for Children</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
-
   </head>
 
   <body>
     <%= component "navbar", [] %>
-    <main role="main">
-      <%= render @view_module, @view_template, assigns %>
-    </main>
+    <div class="border-box afc-bg-pink pv3">
+      <main role="main">
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+    </div>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
+
 </html>
