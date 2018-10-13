@@ -1,1 +1,30 @@
 <%= component "day_week_month_bar", [] %>
+
+<div class="w-90 bg-white center br2 pa3 mt-day-week-month">
+  <div class="">
+    <p class="pa3 ba br2 dib mb4">10th Oct 2019 (placeholder)</p>
+  </div>
+  <p class="tc b f4 mb3">How are you feeling today?</p>
+  <div class="center w-90">
+
+    <div class="flex justify-between pt3 ph1 mb3">
+      <%= component "emoji_helper", [emoji: "😆", emotion: "Happy"] %>
+      <%= component "emoji_helper", [emoji: "🤩", emotion: "Excited"] %>
+    </div>
+
+    <div class="flex justify-between pt3 ph1 mb3">
+      <%= component "emoji_helper", [emoji: "😡", emotion: "Angry"] %>
+      <%= component "emoji_helper", [emoji: "😭", emotion: "Sad"] %>
+    </div>
+
+    <div class="flex justify-between pt3 ph1 mb3">
+      <%= component "emoji_helper", [emoji: "😬", emotion: "Worried"] %>
+      <%= component "emoji_helper", [emoji: "😐", emotion: "I don't know"] %>
+    </div>
+
+    <div class="flex justify-between pt3 ph1 mb3">
+      <%= component "emoji_helper", [emoji: "😶", emotion: "Something else"] %>
+    </div>
+
+  </div>
+</div>

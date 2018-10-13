@@ -1,0 +1,4 @@
+<div class="tc w4">
+  <%= emoji_p_tag(@emoji) %>
+  <p class="-mt2"><%= @emotion %></p>
+</div>
