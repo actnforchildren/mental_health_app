@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
   </head>
 
-  <body>
+  <body class="pv3 afc-bg-pink">
     <%= component "navbar", [] %>
-    <div class="border-box afc-bg-pink pv3">
+    <div>
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
