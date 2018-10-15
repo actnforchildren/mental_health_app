@@ -17,6 +17,7 @@ defmodule AfcWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/emotion", EmotionController, only: [:show, :create]
   end
 
   # Other scopes may use custom stacks.

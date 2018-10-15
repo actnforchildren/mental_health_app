@@ -1,29 +1,27 @@
 <%= component "day_week_month_bar", [] %>
 
-<div class="w-90 bg-white center br2 pa3 mt-day-week-month mb5">
-  <div class="">
-    <p class="pa3 ba br2 dib mb4">10th Oct 2019 (placeholder)</p>
-  </div>
+<div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month">
+  <p class="pa3 ba br2 dib mb4">10th Oct 2019 (placeholder)</p>
   <p class="tc b f4 mb3">How are you feeling today?</p>
   <div class="center w-90">
 
     <div class="flex justify-between pt3 ph1 mb3">
-      <%= component "emoji_helper", [emoji: "😆", emotion: "Happy"] %>
-      <%= component "emoji_helper", [emoji: "🤩", emotion: "Excited"] %>
+      <%= component "emoji_helper", [emoji: "😆", emotion: "Happy", page: "happy", conn: @conn] %>
+      <%= component "emoji_helper", [emoji: "🤩", emotion: "Excited", page: "happy", conn: @conn] %>
     </div>
 
     <div class="flex justify-between pt3 ph1 mb3">
-      <%= component "emoji_helper", [emoji: "😡", emotion: "Angry"] %>
-      <%= component "emoji_helper", [emoji: "😭", emotion: "Sad"] %>
+      <%= component "emoji_helper", [emoji: "😡", emotion: "Angry", page: "angry", conn: @conn] %>
+      <%= component "emoji_helper", [emoji: "😭", emotion: "Sad", page: "happy", conn: @conn] %>
     </div>
 
     <div class="flex justify-between pt3 ph1 mb3">
-      <%= component "emoji_helper", [emoji: "😬", emotion: "Worried"] %>
-      <%= component "emoji_helper", [emoji: "😐", emotion: "I don't know"] %>
+      <%= component "emoji_helper", [emoji: "😬", emotion: "Worried", page: "happy", conn: @conn] %>
+      <%= component "emoji_helper", [emoji: "😐", emotion: "I don't know", page: "happy", conn: @conn] %>
     </div>
 
     <div class="flex justify-between pt3 ph1 mb3">
-      <%= component "emoji_helper", [emoji: "😶", emotion: "Something else"] %>
+      <%= component "emoji_helper", [emoji: "😶", emotion: "Something else", page: "happy", conn: @conn] %>
     </div>
 
   </div>
