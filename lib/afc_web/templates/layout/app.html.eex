@@ -13,7 +13,9 @@
   </head>
 
   <body class="pv3 afc-bg-pink">
-    <%= component "navbar", [] %>
+    <%= if @current_user do %>
+      <%= component "navbar", [conn: @conn, current_user: @current_user] %>
+    <% end %>
     <div>
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
@@ -21,5 +23,4 @@
     </div>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
-
 </html>

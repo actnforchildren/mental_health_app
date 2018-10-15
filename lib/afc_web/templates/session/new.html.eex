@@ -1,0 +1,3 @@
+  <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
+    <%= submit "login" %>
+  <% end %>
