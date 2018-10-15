@@ -1,0 +1,3 @@
+<div class="w-90 bg-white center br2 pa3 mb5">
+  <%= render_autoform(@conn, :create, @module, assigns: [changeset: @changeset]) %>
+</div>
