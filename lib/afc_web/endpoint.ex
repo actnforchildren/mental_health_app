@@ -35,7 +35,7 @@ defmodule AfcWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_afc_key",
-    signing_salt: "R4hPr993"
+    signing_salt: "C0QYpMnL"
 
   plug AfcWeb.Router
 
