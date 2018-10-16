@@ -1,1 +1,25 @@
 /* This file is for your main application css. */
+
+.afc-bg-pink {
+  background-color: #F5BABF;
+}
+
+.afc-b--pink {
+  border-color: #F5BABF;
+}
+
+.emoji-font-size {
+  font-size: 64pt;
+}
+
+.-mt2 {
+  margin-top: -0.5rem;
+}
+
+.h-day-week-month {
+  height: 3rem;
+}
+
+.mt-day-week-month {
+  margin-top: 3rem;
+}

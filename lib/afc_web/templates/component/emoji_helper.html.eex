@@ -1,0 +1,6 @@
+<div class="tc w4">
+  <%= link to: emotion_path(@conn, :show, @page), class: "pointer link black" do %>
+    <%= emoji_p_tag(@emoji) %>
+    <p class="-mt2"><%= @emotion %></p>
+  <%= end %>
+</div>
