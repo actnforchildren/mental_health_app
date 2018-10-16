@@ -1,4 +1,4 @@
-defmodule Afc.Trusted_adult do
+defmodule Afc.TrustedAdult do
   use Ecto.Schema
   import Ecto.Changeset
 

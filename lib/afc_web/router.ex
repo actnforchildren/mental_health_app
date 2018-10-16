@@ -1,5 +1,6 @@
 defmodule AfcWeb.Router do
   use AfcWeb, :router
+  import AfcWeb.Auth
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -7,6 +8,7 @@ defmodule AfcWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug AfcWeb.Auth
   end
 
   pipeline :api do
@@ -16,12 +18,13 @@ defmodule AfcWeb.Router do
   scope "/", AfcWeb do
     pipe_through :browser # Use the default browser stack
 
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
+  end
+
+  scope "/", AfcWeb do
+    pipe_through [:browser, :authenticate_user]
+
     get "/", PageController, :index
     resources "/emotion", EmotionController, only: [:show, :create]
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", AfcWeb do
-  #   pipe_through :api
-  # end
 end
