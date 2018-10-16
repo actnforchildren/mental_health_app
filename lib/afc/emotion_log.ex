@@ -1,11 +1,12 @@
 defmodule Afc.EmotionLog do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Afc.EctoEnum.EmotionEnum
+  alias Afc.{EctoEnum.EmotionEnum, User}
 
   schema "emotion_logs" do
     field :emotion, EmotionEnum
-    field :user_id, :id
+    field :emotion_id, :id
+    belongs_to :user, User
 
     timestamps()
   end
@@ -13,7 +14,7 @@ defmodule Afc.EmotionLog do
   @doc false
   def changeset(emotion_log, attrs) do
     emotion_log
-    |> cast(attrs, [:emotion])
-    |> validate_required([:emotion])
+    |> cast(attrs, [:emotion, :emotion_id])
+    |> validate_required([:emotion, :emotion_id])
   end
 end
