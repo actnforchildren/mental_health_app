@@ -3,7 +3,7 @@ defmodule AfcWeb.PageController do
   alias Afc.Emotion
 
   def index(conn, _params) do
-    case Emotion.todays_logged_emotion(conn.assigns.current_user) do
+    case Emotion.todays_emotion_log(conn.assigns.current_user) do
       nil ->
         render conn, "index.html"
       emotion ->

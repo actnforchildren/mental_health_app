@@ -1,10 +1,10 @@
 defmodule Afc.Emotion do
   alias Afc.Repo
-  alias Afc.Emotion.EmotionLog
+  alias Afc.Emotion.{Angry, EmotionLog, Happy}
   import Ecto.Query
   use Timex
 
-  def todays_logged_emotion(user) do
+  def todays_emotion_log(user) do
     start_of_today = Timex.today() |> Timex.to_naive_datetime()
 
     query =
@@ -13,5 +13,32 @@ defmodule Afc.Emotion do
       and e.inserted_at > ^start_of_today
 
     Repo.one(query)
+  end
+
+  def get_emotion_module_atom(emotion_str) do
+    "Elixir.Afc.Emotion." <> String.capitalize(emotion_str)
+    |> String.to_atom()
+  end
+
+  def get_emotion_map(emotion_str) do
+    emotion_atom = String.to_atom(emotion_str)
+    emotions_map() |> Map.get(emotion_atom)
+  end
+
+  defp emotions_map do
+    %{
+      happy: Map.new([module: Happy, emoji: "😆"]),
+      angry: Map.new([module: Angry, emoji: "😡"]),
+      excited: Map.new([module: Angry, emoji: "🤩"]),
+      sad: Map.new([module: Angry, emoji: "😭"]),
+      worried: Map.new([module: Angry, emoji: "😬"]),
+      dont_know: Map.new([module: Angry, emoji: "😐"]),
+      else: Map.new([module: Angry, emoji: "😶"])
+    }
+  end
+
+  def emotion_list do
+    emotions_map()
+    |> Map.keys()
   end
 end

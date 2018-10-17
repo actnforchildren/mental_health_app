@@ -1,6 +1,7 @@
 defmodule AfcWeb.EmotionController do
   use AfcWeb, :controller
-  alias Afc.Emotion.{Angry, EmotionLog, Happy}
+  alias Afc.Emotion
+  alias Afc.Emotion.{EmotionLog}
   alias Afc.Repo
   alias Ecto.Changeset
 
@@ -8,27 +9,26 @@ defmodule AfcWeb.EmotionController do
     render conn, "captured.html"
   end
 
-  def show(conn, %{"id" => emotion}) do
-    {module, changeset} = get_page_module_and_changeset(emotion)
-
-    render conn, "form.html", changeset: changeset, module: module
+  def show(conn, %{"id" => emotion_str}) do
+    emotion_map = Emotion.get_emotion_map(emotion_str)
+    module_atom = Emotion.get_emotion_module_atom(emotion_str)
+    module_struct = struct(module_atom)
+    changeset = emotion_map.module.changeset(module_struct, %{})
+    render conn, "form.html", changeset: changeset, module: emotion_map.module
   end
 
   def create(conn, params) do
-    submitted_emotion =
-      ~w(angry happy)
-      |> Enum.filter(&(Map.has_key?(params, &1)))
-      |> hd()
-
-    form_info = Map.get(params, submitted_emotion)
-
-    {module, changeset} =
-      get_page_module_and_changeset(submitted_emotion, form_info)
+    emotion_str = get_submitted_emotion(params)
+    form_info = Map.get(params, emotion_str)
+    emotion_map = Emotion.get_emotion_map(emotion_str)
+    module_atom = Emotion.get_emotion_module_atom(emotion_str)
+    module_struct = struct(module_atom)
+    changeset = emotion_map.module.changeset(module_struct, form_info)
 
     case Repo.insert(changeset) do
       {:ok, captured_emotion} ->
         emotion_params =
-          %{emotion: submitted_emotion, emotion_id: captured_emotion.id}
+          %{emotion: emotion_str, emotion_id: captured_emotion.id}
 
         %EmotionLog{}
         |> EmotionLog.changeset(emotion_params)
@@ -38,16 +38,15 @@ defmodule AfcWeb.EmotionController do
         redirect(conn, to: emotion_path(conn, :show, "captured"))
 
       {:error, changeset} ->
-        render conn, "form.html", changeset: changeset, module: module
+        assigns = [changeset: changeset, module: emotion_map.module]
+        render conn, "form.html", assigns
     end
   end
 
-  defp get_page_module_and_changeset(page, params \\ %{}) do
-    case page do
-      "happy" ->
-        {Happy, Happy.changeset(%Happy{}, params)}
-      "angry" ->
-        {Angry, Angry.changeset(%Angry{}, params)}
-    end
+  defp get_submitted_emotion(params) do
+    Emotion.emotion_list
+    |> Enum.map(&Atom.to_string/1)
+    |> Enum.filter(&(Map.has_key?(params, &1)))
+    |> hd()
   end
 end
