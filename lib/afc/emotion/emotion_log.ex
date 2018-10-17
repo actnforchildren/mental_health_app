@@ -1,4 +1,4 @@
-defmodule Afc.EmotionLog do
+defmodule Afc.Emotion.EmotionLog do
   use Ecto.Schema
   import Ecto.Changeset
   alias Afc.{EctoEnum.EmotionEnum, User}

@@ -1,6 +1,7 @@
 defmodule AfcWeb.EmotionController do
   use AfcWeb, :controller
-  alias Afc.{Angry, EmotionLog, Happy, Repo}
+  alias Afc.Emotion.{Angry, EmotionLog, Happy}
+  alias Afc.Repo
   alias Ecto.Changeset
 
   def show(conn, %{"id" => "captured"}) do

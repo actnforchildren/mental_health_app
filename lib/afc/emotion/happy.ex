@@ -1,4 +1,4 @@
-defmodule Afc.Happy do
+defmodule Afc.Emotion.Happy do
   use Ecto.Schema
   import Ecto.Changeset
 
