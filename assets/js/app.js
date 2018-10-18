@@ -19,3 +19,7 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+
+// import elm code
+// import Elm from "./elm.js"
+var app = Elm.Main.init({ node: document.getElementById("elm-calendar") })
