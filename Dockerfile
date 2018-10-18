@@ -8,7 +8,10 @@ RUN mix local.hex --force \
   && apt-get install -y nodejs \
   && apt-get install -y build-essential \
   && apt-get install -y inotify-tools \
-  && mix local.rebar --force
+  && mix local.rebar --force \
+  && wget "https://github.com/elm/compiler/releases/download/0.19.0/binaries-for-linux.tar.gz" \
+  && tar xzf binaries-for-linux.tar.gz \
+  && mv elm /usr/local/bin/
 
 ENV APP_HOME /app
 WORKDIR $APP_HOME

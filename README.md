@@ -43,7 +43,7 @@ Method based on https://hexdocs.pm/phoenix/heroku.html
 You don't need to do this section as the application is now generated.
 
 - Create a new Phoenix project:
-  ```docker-compose run --rm app mix phx.new . --app afc```
+  `docker-compose run --rm app mix phx.new . --app afc`
 
   answer yes to `The directory /app already exists. Are you sure you want to continue? [Yn]` and `Fetch and install dependencies? [Yn]`
 
