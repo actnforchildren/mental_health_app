@@ -1,4 +1,4 @@
-defmodule Afc.Angry do
+defmodule Afc.Emotion.Angry do
   use Ecto.Schema
   import Ecto.Changeset
 

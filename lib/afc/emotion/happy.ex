@@ -1,10 +1,10 @@
-defmodule Afc.Happy do
+defmodule Afc.Emotion.Happy do
   use Ecto.Schema
   import Ecto.Changeset
 
 
   schema "happy" do
-    field :reason_text, :string
+    field :reason, :string
 
     timestamps()
   end
@@ -12,6 +12,6 @@ defmodule Afc.Happy do
   @doc false
   def changeset(happy, attrs) do
     happy
-    |> cast(attrs, [:reason_text])
+    |> cast(attrs, [:reason])
   end
 end
