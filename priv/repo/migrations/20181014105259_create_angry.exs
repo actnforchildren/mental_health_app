@@ -13,7 +13,7 @@ defmodule Afc.Repo.Migrations.CreateAngry do
       add :classwork, :boolean, default: false, null: false
       add :homework, :boolean, default: false, null: false
       add :else, :boolean, default: false, null: false
-      add :reason, :string
+      add :reason, :text
 
       timestamps()
     end

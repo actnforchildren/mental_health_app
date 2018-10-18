@@ -6,22 +6,22 @@
   <div class="center w-90">
 
     <div class="flex justify-between pt3 ph1 mb3">
-      <%= component "emoji_helper", [emoji: "😆", emotion: "Happy", page: "happy", conn: @conn] %>
-      <%= component "emoji_helper", [emoji: "🤩", emotion: "Excited", page: "happy", conn: @conn] %>
+      <%= component "emoji_helper", [emotion: "Happy", page: "happy", conn: @conn] %>
+      <%= component "emoji_helper", [emotion: "Excited", page: "happy", conn: @conn] %>
     </div>
 
     <div class="flex justify-between pt3 ph1 mb3">
-      <%= component "emoji_helper", [emoji: "😡", emotion: "Angry", page: "angry", conn: @conn] %>
-      <%= component "emoji_helper", [emoji: "😭", emotion: "Sad", page: "happy", conn: @conn] %>
+      <%= component "emoji_helper", [emotion: "Angry", page: "angry", conn: @conn] %>
+      <%= component "emoji_helper", [emotion: "Sad", page: "happy", conn: @conn] %>
     </div>
 
     <div class="flex justify-between pt3 ph1 mb3">
-      <%= component "emoji_helper", [emoji: "😬", emotion: "Worried", page: "happy", conn: @conn] %>
-      <%= component "emoji_helper", [emoji: "😐", emotion: "I don't know", page: "happy", conn: @conn] %>
+      <%= component "emoji_helper", [emotion: "Worried", page: "happy", conn: @conn] %>
+      <%= component "emoji_helper", [emotion: "I don't know", page: "happy", conn: @conn] %>
     </div>
 
     <div class="flex justify-between pt3 ph1 mb3">
-      <%= component "emoji_helper", [emoji: "😶", emotion: "Something else", page: "happy", conn: @conn] %>
+      <%= component "emoji_helper", [emotion: "Something else", page: "happy", conn: @conn] %>
     </div>
 
   </div>

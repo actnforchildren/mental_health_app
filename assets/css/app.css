@@ -23,3 +23,7 @@
 .mt-day-week-month {
   margin-top: 3rem;
 }
+
+.afc-b--red {
+  border-color: #DF001C;
+}
