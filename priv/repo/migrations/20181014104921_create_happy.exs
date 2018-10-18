@@ -3,7 +3,7 @@ defmodule Afc.Repo.Migrations.CreateHappy do
 
   def change do
     create table(:happy) do
-      add :reason_text, :string
+      add :reason, :text
 
       timestamps()
     end
