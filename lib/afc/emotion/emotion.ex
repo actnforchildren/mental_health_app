@@ -15,14 +15,28 @@ defmodule Afc.Emotion do
     Repo.one(query)
   end
 
-  def get_emotion_module_atom(emotion_str) do
-    "Elixir.Afc.Emotion." <> String.capitalize(emotion_str)
+  def get_emotion_module_name(emotion) do
+    emotion_str =
+      case is_atom(emotion) do
+        true ->
+          Atom.to_string(emotion)
+        false ->
+          emotion
+      end
+      |> String.capitalize()
+
+    "Elixir.Afc.Emotion." <> emotion_str
     |> String.to_atom()
   end
 
   def get_emotion_map(emotion_str) do
     emotion_atom = String.to_atom(emotion_str)
     emotions_map() |> Map.get(emotion_atom)
+  end
+
+  def emotion_list do
+    emotions_map()
+    |> Map.keys()
   end
 
   defp emotions_map do
@@ -35,10 +49,5 @@ defmodule Afc.Emotion do
       dont_know: Map.new([module: Angry, emoji: "😐"]),
       else: Map.new([module: Angry, emoji: "😶"])
     }
-  end
-
-  def emotion_list do
-    emotions_map()
-    |> Map.keys()
   end
 end

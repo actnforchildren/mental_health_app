@@ -11,8 +11,7 @@ defmodule AfcWeb.EmotionController do
 
   def show(conn, %{"id" => emotion_str}) do
     emotion_map = Emotion.get_emotion_map(emotion_str)
-    module_atom = Emotion.get_emotion_module_atom(emotion_str)
-    module_struct = struct(module_atom)
+    module_struct = emotion_str |> Emotion.get_emotion_module_name() |> struct()
     changeset = emotion_map.module.changeset(module_struct, %{})
     render conn, "form.html", changeset: changeset, module: emotion_map.module
   end
@@ -21,8 +20,7 @@ defmodule AfcWeb.EmotionController do
     emotion_str = get_submitted_emotion(params)
     form_info = Map.get(params, emotion_str)
     emotion_map = Emotion.get_emotion_map(emotion_str)
-    module_atom = Emotion.get_emotion_module_atom(emotion_str)
-    module_struct = struct(module_atom)
+    module_struct = emotion_str |> Emotion.get_emotion_module_name() |> struct()
     changeset = emotion_map.module.changeset(module_struct, form_info)
 
     case Repo.insert(changeset) do
