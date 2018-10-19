@@ -24,7 +24,7 @@ defmodule AfcWeb.ComponentHelpers do
       "angry" -> "😡"
       "sad" -> "😭"
       "worried" -> "😬"
-      "i don't know" -> "😐"
+      "i don't know" -> "🤔"
       "something else" -> "😶"
     end
   end
