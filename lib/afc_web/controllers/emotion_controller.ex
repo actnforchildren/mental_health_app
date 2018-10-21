@@ -13,7 +13,7 @@ defmodule AfcWeb.EmotionController do
     emotion_map = Emotion.get_emotion_map(emotion_str)
     module_struct = emotion_str |> Emotion.get_emotion_module_name() |> struct()
     changeset = emotion_map.module.changeset(module_struct, %{})
-    render conn, "form.html", changeset: changeset, module: emotion_map.module
+    render conn, "form.html", changeset: changeset, module: emotion_map.module, emotion: emotion_str
   end
 
   def create(conn, params) do

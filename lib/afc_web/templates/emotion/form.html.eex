@@ -1,25 +1,19 @@
-<div class="w-100 bg-white center pa3 mb5">
-  <div class="tc mb4">
-    <p class="mv2">If you're still feeling very emotional,</p>
-    <p class="mv2">practice a coping strategy to feel</p>
-    <p class="mv2">better.</p>
-    <button type="button" class="afc-bg-pink ph3 pv2 br2 mt3 b">Toolbox</button>
-  </div>
-
-  <div class="mb4 flex">
-    <div class="ph3 pt3">
-      <%= emoji_p_tag("angry") %>
-    </div>
-    <div class="">
-      <p class="mv2">I'm sorry you're feeling angry today.</p>
-      <p class="mv2">Now is a good time to think about why you may have felt that way</p>
-    </div>
-  </div>
+<div class="w-100 bg-white center pa3 mb5 f4">
+  <%= render_emotion_reason(@emotion) %>
 
   <div class="">
-    <p class="b tc mb3">(Select as many as you like)</p>
     <div class="w5 center pl4">
-      <%= custom_render_autoform(@conn, :create, [{@module, custom_labels: %{school: "learn stuff"}, input_first: [:friends]}], assigns: [changeset: @changeset]) %>
+      <%= custom_render_autoform(
+        @conn,
+        :create,
+        [{
+          @module,
+          custom_labels: %{"family/home": "Family / Home", else: "Something Else"},
+          input_first: Emotion.reason_list(),
+          exclude: [:reason]
+        }],
+        assigns: [changeset: @changeset])
+      %>
     </div>
   </div>
 </div>

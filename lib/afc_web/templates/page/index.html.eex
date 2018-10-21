@@ -1,4 +1,4 @@
-<%= component "day_week_month_bar", [] %>
+<%= component "day_week_month_bar" %>
 
 <div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month">
   <p class="pa3 ba br2 dib mb4">10th Oct 2019 (placeholder)</p>

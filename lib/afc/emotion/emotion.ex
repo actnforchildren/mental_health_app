@@ -39,6 +39,10 @@ defmodule Afc.Emotion do
     |> Map.keys()
   end
 
+  def reason_list do
+    [:friends, :school, :"family/home", :community, :bullying, :exams, :teachers, :classwork, :homework, :else]
+  end
+
   defp emotions_map do
     %{
       happy: Map.new([module: Happy, emoji: "😆"]),
@@ -46,7 +50,7 @@ defmodule Afc.Emotion do
       excited: Map.new([module: Angry, emoji: "🤩"]),
       sad: Map.new([module: Angry, emoji: "😭"]),
       worried: Map.new([module: Angry, emoji: "😬"]),
-      dont_know: Map.new([module: Angry, emoji: "😐"]),
+      dont_know: Map.new([module: Angry, emoji: "🤔"]),
       else: Map.new([module: Angry, emoji: "😶"])
     }
   end
