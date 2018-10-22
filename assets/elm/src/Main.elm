@@ -15,7 +15,6 @@ main =
 
 -- MODEL
 
-
 type alias Model =
   {
     calendar : Calendar.Calendar

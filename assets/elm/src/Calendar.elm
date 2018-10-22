@@ -92,12 +92,20 @@ firstDayOfMonth (Calendar model) =
           Nothing -> model.posix
           Just p -> p
 
+
 currentMonth : Calendar -> String
 currentMonth (Calendar model as calendar) =
   let
     firstDay = firstDayOfMonth calendar
   in
     formatMonth <| Time.toMonth model.zone firstDay
+
+currentYear : Calendar -> String
+currentYear (Calendar model as calendar) =
+  let
+    firstDay = firstDayOfMonth calendar
+  in
+    String.fromInt <| Time.toYear model.zone firstDay
 
 firstNextMonth : Calendar -> Time.Posix
 firstNextMonth ((Calendar model) as calendar) =
@@ -170,29 +178,36 @@ view : Calendar -> Html Msg
 view calendar =
   showCalendar calendar
 
+
 showCalendar : Calendar -> Html Msg
 showCalendar ((Calendar model) as calendar) =
-  div []
-      [ p [onClick Toggle] [ text <| formatPosix model.zone model.posix ]
-      , span [onClick PreviousMonth] [text "<"]
-      , span [] [text <| currentMonth calendar]
-      , span [onClick NextMonth] [text ">"]
-      , table [ classList [("dn", not model.open)]]
-          [ thead []
-              [ tr []
-                  [ td [] [text "Mon"]
-                  , td [] [text "Tue"]
-                  , td [] [text "Wed"]
-                  , td [] [text "Thu"]
-                  , td [] [text "Fri"]
-                  , td [] [text "Sat"]
-                  , td [] [text "Sun"]
-                  ]
-              ]
-          , tbody []
-              (showMonth calendar)
+  span []
+  [ p [onClick Toggle, class "pa2 ba br2 dib mb2 pointer"] [ text <| formatPosix model.zone model.posix ]
+  , div [class "relative"]
+      [ div [ class "absolute top-0 left-0 bg-white pt3 w-100", classList [("dn", not model.open)]]
+        [ div [class "b"]
+          [ span [onClick PreviousMonth, class "dib w-25 tl pointer"] [text "<"]
+          , span [class "dib w-50 tc"] [text <| currentMonth calendar ++ " " ++ currentYear calendar]
+          , span [onClick NextMonth, class "dib w-25 tr pointer"] [text ">"]
           ]
+        , table [ class "w-100 tc center"]
+          [ thead []
+            [ tr []
+              [ td [class "pv3"] [text "Mon"]
+              , td [class "pv3"] [text "Tue"]
+              , td [class "pv3"] [text "Wed"]
+              , td [class "pv3"] [text "Thu"]
+              , td [class "pv3"] [text "Fri"]
+              , td [class "pv3"] [text "Sat"]
+              , td [class "pv3"] [text "Sun"]
+              ]
+            ]
+          , tbody []
+          (showMonth calendar)
+        ]
+        ]
       ]
+    ]
 
 showMonth : Calendar -> List (Html Msg)
 showMonth (Calendar model) =
@@ -207,10 +222,13 @@ showDate : Time.Zone -> Maybe Time.Posix -> Html Msg
 showDate zone date =
         case date of
             Just d ->
-                  td [] [ text <| String.fromInt <| Time.toDay zone d ]
+                  td [class "ph2 pv3 b relative"]
+                    [ span [class "db"] [text <| String.fromInt <| Time.toDay zone d]
+                    , span [class "absolute bottom-0 right-0 left-0 w-25 h-25 br-100 bg-red center"] []
+                    ]
 
             Nothing ->
-                td [] [ text "" ]
+                td [class "ph2 pv3"] [ text "" ]
 
 formatPosix : Time.Zone -> Time.Posix -> String
 formatPosix zone time =
