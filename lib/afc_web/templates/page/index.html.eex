@@ -7,7 +7,7 @@
 
     <div class="flex justify-between pt3 ph1 mb3">
       <%= component "emoji_helper", [emotion: "Happy", page: "happy", conn: @conn] %>
-      <%= component "emoji_helper", [emotion: "Excited", page: "happy", conn: @conn] %>
+      <%= component "emoji_helper", [emotion: "Excited", page: "excited", conn: @conn] %>
     </div>
 
     <div class="flex justify-between pt3 ph1 mb3">

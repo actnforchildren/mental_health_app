@@ -1,3 +1,3 @@
 import EctoEnum
 
-defenum Afc.EctoEnum.EmotionEnum, :emotion, [:angry, :happy]
+defenum Afc.EctoEnum.EmotionEnum, :emotion, [:angry, :happy, :excited]
