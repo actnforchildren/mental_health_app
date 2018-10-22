@@ -2,6 +2,7 @@ defmodule Afc.Emotion.Happy do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @moduledoc false
 
   schema "happy" do
     field :reason, :string

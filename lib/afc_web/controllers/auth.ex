@@ -4,6 +4,10 @@ defmodule AfcWeb.Auth do
   alias Afc.{Repo, User}
   alias AfcWeb.Router.Helpers
 
+  @moduledoc """
+  Auth module
+  """
+
   def init(opts), do: opts
 
   def call(conn, _opts) do

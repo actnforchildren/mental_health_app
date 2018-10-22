@@ -2,6 +2,7 @@ defmodule Afc.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @moduledoc false
 
   schema "users" do
     field :pin, :integer

@@ -2,6 +2,7 @@ defmodule Afc.Emotion.Angry do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @moduledoc false
 
   schema "angry" do
     field :friends, :boolean, default: false
@@ -22,6 +23,9 @@ defmodule Afc.Emotion.Angry do
   @doc false
   def changeset(angry, attrs) do
     angry
-    |> cast(attrs, [:friends, :school, :"family/home", :community, :bullying, :exams, :teachers, :classwork, :homework, :else, :reason])
+    |> cast(attrs, [
+      :friends, :school, :"family/home", :community, :bullying, :exams,
+      :teachers, :classwork, :homework, :else, :reason
+    ])
   end
 end

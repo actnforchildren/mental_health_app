@@ -4,6 +4,8 @@ defmodule Afc.Emotion do
   import Ecto.Query
   use Timex
 
+  @moduledoc false
+
   def todays_emotion_log(user) do
     start_of_today = Timex.today() |> Timex.to_naive_datetime()
 
@@ -17,7 +19,9 @@ defmodule Afc.Emotion do
 
   def get_emotion_module_name(emotion) do
     emotion_str =
-      case is_atom(emotion) do
+      emotion
+      |> is_atom()
+      |> case do
         true ->
           Atom.to_string(emotion)
         false ->
@@ -40,7 +44,10 @@ defmodule Afc.Emotion do
   end
 
   def reason_list do
-    [:friends, :school, :"family/home", :community, :bullying, :exams, :teachers, :classwork, :homework, :else]
+    [
+      :friends, :school, :"family/home", :community, :bullying, :exams,
+      :teachers, :classwork, :homework, :else
+    ]
   end
 
   defp emotions_map do
