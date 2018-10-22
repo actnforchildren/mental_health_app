@@ -1,3 +1,28 @@
-<div class="w-90 bg-white center br2 pa3 mb5">
-  <%= render_autoform(@conn, :create, @module, assigns: [changeset: @changeset]) %>
+<div class="w-100 bg-white center pa3 mb5 f4">
+  <%= render_emotion_reason(@emotion) %>
+
+  <div class="">
+    <%= custom_render_autoform(
+      @conn,
+      :create,
+      [
+        "<div class=\"form-group-checklist w-60 w-30-ns center\">",
+        {
+          @module,
+          custom_labels: %{"family/home": "Family / Home", else: "Something Else"},
+          input_first: Emotion.reason_list(),
+          exclude: [:reason]
+        },
+        "</div>",
+        "<div class=\"form-group-reason mt4 w-90 center\">",
+        {
+          @module,
+          custom_labels: %{reason: "Say it in your own words"},
+          exclude: Emotion.reason_list()
+        },
+        "</div>",
+      ],
+      assigns: [changeset: @changeset])
+    %>
+  </div>
 </div>

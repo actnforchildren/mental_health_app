@@ -1,0 +1,17 @@
+<div class="tc" id="<%= "toolbox_" <> @emotion %>">
+  <p class="mv2">If you're still feeling very emotional,</p>
+  <p class="mv2">practice a coping strategy to feel</p>
+  <p class="mv2">better.</p>
+  <button type="button" class="afc-bg-pink ph3 pv2 br2 mt3 b">Toolbox</button>
+</div>
+
+<div class="">
+  <div class="mv4 flex center w5-1">
+    <%= emoji_p_tag(@emotion, class: "pr3 pt3") %>
+    <div class="">
+      <p class="mv2">I'm sorry you're feeling <%= @emotion %> today.</p>
+      <p class="mv2">Now is a good time to think about why you may have felt that way</p>
+    </div>
+  </div>
+  <p class="b tc mb3">(Select as many as you like)</p>
+</div>
