@@ -1,0 +1,7 @@
+<div class="mv4 flex center w5-1">
+  <%= emoji_p_tag(@emotion, class: "pr3 pt3") %>
+  <div class="">
+    <p class="mv2">That's great!</p>
+    <p class="mv2">What made you <%= @emotion %> today?</p>
+  </div>
+</div>

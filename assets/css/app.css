@@ -27,3 +27,55 @@
 .afc-b--red {
   border-color: #DF001C;
 }
+
+.afc-bg-green {
+  background-color: #8FCC8F;
+}
+
+.w5-1 {
+  width: 18rem;
+}
+
+/* Autoform Style Start */
+
+.form-group-checklist > .form-group {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.form-group-checklist > .form-group input[type='checkbox'] ~ label {
+  cursor: pointer;
+  padding-left: 0.5rem;
+  vertical-align: 5px;
+}
+
+.form-group-checklist > .form-group input[type='checkbox'] {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+}
+
+.form-group-reason > .form-group {
+  display: block;
+}
+
+.form-group-reason > .form-group input {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 0.25rem;
+}
+
+.form-group > button {
+  content: 'Go';
+  border: none;
+  display: flex;
+  margin: 2rem auto 0 auto;
+  background-color: #8FCC8F;
+  font-size: 20pt;
+  padding: 0.5rem 2rem;
+  border-radius: 0.25rem;
+}
+
+/* Autoform Style End */

@@ -4,16 +4,16 @@ defmodule Afc.Emotion.Angry do
 
 
   schema "angry" do
-    field :bullying, :boolean, default: false
-    field :classwork, :boolean, default: false
-    field :community, :boolean, default: false
-    field :else, :boolean, default: false
-    field :exams, :boolean, default: false
-    field :"family/home", :boolean, default: false
     field :friends, :boolean, default: false
-    field :homework, :boolean, default: false
     field :school, :boolean, default: false
+    field :"family/home", :boolean, default: false
+    field :community, :boolean, default: false
+    field :bullying, :boolean, default: false
+    field :exams, :boolean, default: false
     field :teachers, :boolean, default: false
+    field :classwork, :boolean, default: false
+    field :homework, :boolean, default: false
+    field :else, :boolean, default: false
     field :reason, :string
 
     timestamps()
