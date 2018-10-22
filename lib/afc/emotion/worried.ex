@@ -1,10 +1,10 @@
-defmodule Afc.Emotion.Sad do
+defmodule Afc.Emotion.Worried do
   use Ecto.Schema
   import Ecto.Changeset
 
   @moduledoc false
 
-  schema "sad" do
+  schema "worried" do
     field :friends, :boolean, default: false
     field :school, :boolean, default: false
     field :"family/home", :boolean, default: false
