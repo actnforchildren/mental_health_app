@@ -5,6 +5,16 @@ defmodule Afc.Emotion.Happy do
   @moduledoc false
 
   schema "happy" do
+    field :friends, :boolean, default: false
+    field :school, :boolean, default: false
+    field :"family/home", :boolean, default: false
+    field :community, :boolean, default: false
+    field :bullying, :boolean, default: false
+    field :exams, :boolean, default: false
+    field :teachers, :boolean, default: false
+    field :classwork, :boolean, default: false
+    field :homework, :boolean, default: false
+    field :else, :boolean, default: false
     field :reason, :string
 
     timestamps()
@@ -13,6 +23,9 @@ defmodule Afc.Emotion.Happy do
   @doc false
   def changeset(happy, attrs) do
     happy
-    |> cast(attrs, [:reason])
+    |> cast(attrs, [
+      :friends, :school, :"family/home", :community, :bullying, :exams,
+      :teachers, :classwork, :homework, :else, :reason
+    ])
   end
 end
