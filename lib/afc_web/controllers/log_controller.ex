@@ -11,9 +11,9 @@ defmodule AfcWeb.LogController do
         if (selected_date > current_date) do
           render conn, "error.html"
         else
+          today = Timex.today |> Timex.to_unix
           case Emotion.get_emotion_log_for_date(conn.assigns.current_user, date) do
             nil ->
-              today = Timex.today |> Timex.to_unix
               if today == selected_date do
                 redirect conn, to: page_path(conn, :index)
               else
@@ -23,7 +23,12 @@ defmodule AfcWeb.LogController do
             emotion_log ->
               module_name = Emotion.get_emotion_module_name(emotion_log.emotion)
               emotion = Repo.get(module_name, emotion_log.emotion_id)
-              render conn, "single.html", emotion_log: emotion_log, emotion: emotion, millis: selected_date * 1000
+              date_title = if today === selected_date do
+                  "Today's Log"
+                else
+                  Timex.format!(date, "{WDfull} {D} {Mfull}")
+                end
+              render conn, "single.html", emotion_log: emotion_log, emotion: emotion, millis: selected_date * 1000, date_title: date_title
           end
         end
       _ ->
