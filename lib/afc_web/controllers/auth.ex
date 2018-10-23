@@ -16,6 +16,16 @@ defmodule AfcWeb.Auth do
     assign(conn, :current_user, user)
   end
 
+  def login_with_username_and_pin(conn, username, pin) do
+    user = Repo.get_by(User, username: username)
+
+    if user && user.pin == pin do
+      {:ok, login(conn, user)}
+    else
+      {:error, conn}
+    end
+  end
+
   def login(conn, user) do
     conn
     |> assign(:current_user, user)

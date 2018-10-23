@@ -1,7 +1,6 @@
 defmodule AfcWeb.SessionController do
   use AfcWeb, :controller
   alias AfcWeb.Auth
-  alias Afc.{Repo, User}
 
   def new(conn, _params) do
     if conn.assigns.current_user do
@@ -11,12 +10,20 @@ defmodule AfcWeb.SessionController do
     end
   end
 
-  def create(conn, _params) do
-    user = Repo.get_by!(User, username: "test_user")
-
-    conn
-    |> Auth.login(user)
-    |> redirect(to: page_path(conn, :index))
+  def create(conn, %{"session" => %{"username" => username, "pin1" => pin1, "pin2" => pin2, "pin3" => pin3, "pin4" => pin4}}) do
+    pin = "#{pin1}#{pin2}#{pin3}#{pin4}"
+    
+    case Integer.parse(pin) do
+      {pin, ""} ->
+        case Auth.login_with_username_and_pin(conn, username, pin) do
+          {:ok, conn} ->
+            redirect(conn, to: page_path(conn, :index))
+          {:error, conn} ->
+            render(conn, "new.html")
+        end
+      _ ->
+        render(conn, "new.html")
+    end
   end
 
   def delete(conn, _params) do

@@ -14,7 +14,7 @@ defmodule Afc.Emotion do
     query =
       from e in EmotionLog,
       where: e.user_id == ^user.id
-      and e.inserted_at > ^start_of_today
+      and e.inserted_at >= ^start_of_today
 
     Repo.one(query)
   end
@@ -25,7 +25,7 @@ defmodule Afc.Emotion do
     query =
       from e in EmotionLog,
       where: e.user_id == ^user.id
-      and e.inserted_at > ^start_date
+      and e.inserted_at >= ^start_date
       and e.inserted_at < ^end_date
 
     Repo.one(query)
