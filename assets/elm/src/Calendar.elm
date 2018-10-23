@@ -234,7 +234,7 @@ showDate currentTime zone date =
                   td [class "ph2 pv3 b relative pointer"]
                     [ a [href <| "/log?date=" ++ (queryStringDate zone d), class "no-underline black"]
                       [ span [class "db"] [text <| String.fromInt <| Time.toDay zone d]
-                      , span [class "absolute bottom-0 right-0 left-0 w-25 h-25 br-100 bg-red center"] []
+                      -- , span [class "absolute bottom-0 right-0 left-0 w-25 h-25 br-100 bg-red center"] []
                       ]
                     ]
 
