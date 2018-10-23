@@ -22,13 +22,11 @@ defmodule AfcWeb.ComponentHelpers do
 
   def render_emotion_reason(emotion) do
     positive_reasons = ["happy", "excited"]
-    negative_reasons = ["angry", "sad", "worried"]
 
-    cond do
-      Enum.any?(positive_reasons, &(&1 == emotion)) ->
-        component("positive_emotion_reason", emotion: emotion)
-      Enum.any?(negative_reasons, &(&1 == emotion)) ->
-        component("negative_emotion_reason", emotion: emotion)
+    if Enum.any?(positive_reasons, &(&1 == emotion)) do
+      component("positive_emotion_reason", emotion: emotion)
+    else
+      component("negative_emotion_reason", emotion: emotion)
     end
   end
 
@@ -43,8 +41,8 @@ defmodule AfcWeb.ComponentHelpers do
       "angry" -> "😡"
       "sad" -> "😭"
       "worried" -> "😬"
-      "i don't know" -> "🤔"
-      "something else" -> "😶"
+      "unsure" -> "🤔"
+      "else" -> "😶"
     end
   end
 end
