@@ -1,10 +1,10 @@
-defmodule Afc.Emotion.Angry do
+defmodule Afc.Emotion.Excited do
   use Ecto.Schema
   import Ecto.Changeset
 
   @moduledoc false
 
-  schema "angry" do
+  schema "excited" do
     field :friends, :boolean, default: false
     field :school, :boolean, default: false
     field :"family/home", :boolean, default: false
@@ -21,8 +21,8 @@ defmodule Afc.Emotion.Angry do
   end
 
   @doc false
-  def changeset(angry, attrs) do
-    angry
+  def changeset(excited, attrs) do
+    excited
     |> cast(attrs, [
       :friends, :school, :"family/home", :community, :bullying, :exams,
       :teachers, :classwork, :homework, :else, :reason

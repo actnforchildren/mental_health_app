@@ -8,6 +8,18 @@
   border-color: #F5BABF;
 }
 
+.afc-red {
+  color: #E0001D;
+}
+
+.afc-b--red {
+  border-color: #DF001C;
+}
+
+.afc-bg-green {
+  background-color: #8FCC8F;
+}
+
 .emoji-font-size {
   font-size: 64pt;
 }
@@ -22,14 +34,6 @@
 
 .mt-day-week-month {
   margin-top: 3rem;
-}
-
-.afc-b--red {
-  border-color: #DF001C;
-}
-
-.afc-bg-green {
-  background-color: #8FCC8F;
 }
 
 .w5-1 {
@@ -75,6 +79,18 @@
   background-color: #8FCC8F;
   font-size: 20pt;
   padding: 0.5rem 2rem;
+  border-radius: 0.25rem;
+}
+
+.form-group-feeling > .form-group {
+  display: block;
+}
+
+.form-group-feeling > .form-group input {
+  margin-top: 0.5rem;
+  padding: 0.25rem;
+  width: 100%;
+  border: 1px solid grey;
   border-radius: 0.25rem;
 }
 

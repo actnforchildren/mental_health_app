@@ -13,7 +13,8 @@ defmodule AfcWeb.EmotionController do
     emotion_map = Emotion.get_emotion_map(emotion_str)
     module_struct = emotion_str |> Emotion.get_emotion_module_name() |> struct()
     changeset = emotion_map.module.changeset(module_struct, %{})
-    render conn, "form.html", changeset: changeset, module: emotion_map.module, emotion: emotion_str
+    form_page = pick_emotion_form(emotion_str)
+    render conn, form_page, changeset: changeset, module: emotion_map.module, emotion: emotion_str
   end
 
   def create(conn, params) do
@@ -46,5 +47,17 @@ defmodule AfcWeb.EmotionController do
     |> Enum.map(&Atom.to_string/1)
     |> Enum.filter(&(Map.has_key?(params, &1)))
     |> hd()
+  end
+
+  defp pick_emotion_form(emotion_str) do
+    pos_neg_emotions = ["happy", "excited", "angry", "sad", "worried"]
+    cond do
+      Enum.any?(pos_neg_emotions, &(&1 == emotion_str)) ->
+        "positive_negative_form.html"
+      emotion_str == "else" ->
+        "else_form.html"
+      true ->
+        "unsure_form.html"
+    end
   end
 end

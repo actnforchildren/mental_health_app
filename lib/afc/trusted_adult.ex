@@ -2,6 +2,7 @@ defmodule Afc.TrustedAdult do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @moduledoc false
 
   schema "trusted_adults" do
     field :email, :string
