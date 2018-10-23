@@ -1,5 +1,4 @@
 if (document.getElementsByClassName("pin")) {
-  console.log("fdsjlfjsdfklsadjfklsdfjsdklf");
   const pin_inputs = Array.from(document.getElementsByClassName("pin"))
 
   pin_inputs.map((el, i) => {
