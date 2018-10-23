@@ -187,7 +187,7 @@ view calendar =
 showCalendar : Calendar -> Html Msg
 showCalendar ((Calendar model) as calendar) =
   span []
-  [ p [onClick Toggle, class "pa2 ba br2 dib mb2 pointer"] [ text <| formatPosix model.zone model.posix ]
+  [ button [onClick Toggle, class "pa2 ba br2 dib mb2 pointer"] [text <| formatPosix model.zone model.posix]
   , div [class "relative"]
       [ div [ class "absolute top-0 left-0 bg-white pt3 w-100", classList [("dn", not model.open)]]
         [ div [class "b"]
