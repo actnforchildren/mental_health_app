@@ -1,6 +1,8 @@
 defmodule Afc.Emotion do
   alias Afc.Repo
-  alias Afc.Emotion.{Angry, Else, EmotionLog, Excited, Happy, Sad, Worried}
+  alias Afc.Emotion.{
+    Angry, Else, EmotionLog, Excited, Happy, Sad, Unsure, Worried
+  }
   import Ecto.Query
   use Timex
 
@@ -57,7 +59,7 @@ defmodule Afc.Emotion do
       excited: Map.new([module: Excited, emoji: "🤩"]),
       sad: Map.new([module: Sad, emoji: "😭"]),
       worried: Map.new([module: Worried, emoji: "😬"]),
-      dont_know: Map.new([emoji: "🤔"]),
+      unsure: Map.new([module: Unsure, emoji: "🤔"]),
       else: Map.new([module: Else, emoji: "😶"])
     }
   end

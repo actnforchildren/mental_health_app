@@ -56,8 +56,8 @@ defmodule AfcWeb.EmotionController do
         "positive_negative_form.html"
       emotion_str == "else" ->
         "else_form.html"
-      true -> # this will become the case for the i don't know emotion
-        "positive_negative_form.html"
+      true ->
+        "unsure_form.html"
     end
   end
 end

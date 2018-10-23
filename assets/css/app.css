@@ -8,6 +8,18 @@
   border-color: #F5BABF;
 }
 
+.afc-red {
+  color: #E0001D;
+}
+
+.afc-b--red {
+  border-color: #DF001C;
+}
+
+.afc-bg-green {
+  background-color: #8FCC8F;
+}
+
 .emoji-font-size {
   font-size: 64pt;
 }
@@ -22,14 +34,6 @@
 
 .mt-day-week-month {
   margin-top: 3rem;
-}
-
-.afc-b--red {
-  border-color: #DF001C;
-}
-
-.afc-bg-green {
-  background-color: #8FCC8F;
 }
 
 .w5-1 {

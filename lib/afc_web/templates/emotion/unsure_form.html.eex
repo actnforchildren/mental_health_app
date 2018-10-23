@@ -1,0 +1,39 @@
+<div class="w-100 bg-white center pa3 mb5 f4">
+  <div class="mv4 flex center w5-1">
+    <%= emoji_p_tag(@emotion, class: "pr3 pt3") %>
+    <p class="mv2">
+      Sometimes it's hard to know what it is that you're feeling. But often,
+      our bodies can give us helpful clues.
+    </p>
+  </div>
+  <div class="mv4 flex center w5-1">
+    <p>
+      I recommend you try to describe how you’re feeling, and send this
+      information to someone. That way they can help you understand this better.
+    </p>
+  </div>
+
+  <div class="">
+    <%= custom_render_autoform(
+      @conn,
+      :create,
+      [
+        "<div class=\"form-group-reason mt4 w-90 center\">",
+        {
+          @module,
+          custom_labels: %{reason: "Say it in your own words"},
+          exclude: Emotion.reason_list() ++ [:feeling]
+        },
+        "</div>",
+      ],
+      assigns: [changeset: @changeset])
+    %>
+  </div>
+
+  <div class="mv4 center tc lh-title">
+    <p class="mb2">
+      If you can’t wait for someone to read your email, you can call Childline
+      to talk to someone right now.</p>
+    <p class="b afc-red">Call Childline on 0800 1111</p>
+  </div>
+</div>
