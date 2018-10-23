@@ -12,7 +12,7 @@ defmodule AfcWeb.LogController do
         if (selected_date > current_date) do
           render conn, "error.html"
         else
-          case Emotion.day_emotion_log(conn.assigns.current_user, date) do
+          case Emotion.get_emotion_log_for_date(conn.assigns.current_user, date) do
             nil ->
               render conn, "new.html", millis: selected_date * 1000
               emotion_log ->

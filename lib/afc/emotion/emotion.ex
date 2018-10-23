@@ -15,7 +15,7 @@ defmodule Afc.Emotion do
     Repo.one(query)
   end
 
-  def day_emotion_log(user, date) do
+  def get_emotion_log_for_date(user, date) do
     start_date = date |> Timex.to_naive_datetime()
     end_date = Timex.shift(start_date, days: 1)
     query =
