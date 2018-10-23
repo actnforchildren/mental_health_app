@@ -20,3 +20,7 @@
 
   <%= component "trusted_share_btn", [conn: @conn] %>
 </div>
+
+<script type="text/javascript">
+  var millis = <%= @millis %>
+</script>

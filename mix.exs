@@ -45,7 +45,7 @@ defmodule Afc.Mixfile do
       {:cowboy, "~> 1.0"},
       {:excoveralls, "~> 0.10", only: :test},
       {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
-      {:autoform, git: "https://github.com/dwyl/autoform.git", tag: "0.1"},
+      {:autoform, git: "https://github.com/dwyl/autoform.git", tag: "0.2.1"},
       {:ecto_enum, "~> 1.0"},
       {:timex, "~> 3.1"}
     ]

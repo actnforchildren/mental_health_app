@@ -4,6 +4,7 @@ import Html exposing (Html, button, div, text, p)
 import Html.Events exposing (onClick)
 import Task
 import Time
+import Time.Extra
 
 main =
   Browser.element
@@ -20,10 +21,13 @@ type alias Model =
     calendar : Calendar.Calendar
   }
 
-
-init : () -> (Model, Cmd Msg)
-init _ =
-  ( Model Calendar.init
+init : Int -> ( Model, Cmd Msg )
+init millis =
+  let
+    posix = Time.millisToPosix millis
+    calendar = Calendar.setPosix posix Calendar.init
+  in
+  ( Model calendar
   , Cmd.batch [Task.perform CurrentTime Time.now, Task.perform CurrentZone Time.here])
 
 
@@ -39,7 +43,7 @@ update msg model =
     case msg of
         CurrentTime posix ->
           let
-            calendar = Calendar.setPosix posix model.calendar
+            calendar = Calendar.setCurrentTime posix model.calendar
           in
           ({model | calendar = calendar}, Cmd.none)
 

@@ -9,6 +9,7 @@ import Html.Events exposing (onClick)
 
 type alias Model =
   { open : Bool
+  , currentTime: Time.Posix
   , posix : Time.Posix
   , zone : Time.Zone
   , month : List ( List (Maybe Time.Posix))
@@ -20,6 +21,7 @@ init: Calendar
 init =
   Calendar
     { open = False
+    , currentTime = Time.millisToPosix 0
     , posix = Time.millisToPosix 0
     , zone = Time.utc
     , month = []
@@ -63,6 +65,9 @@ setPosix posix (Calendar model) =
     in
     Calendar {model | posix = posix, month = month }
 
+setCurrentTime : Time.Posix -> Calendar -> Calendar
+setCurrentTime posix (Calendar model) =
+    Calendar {model | currentTime = posix }
 
 {--
 Get the first day of the month and the first day of the next month
@@ -211,20 +216,26 @@ showCalendar ((Calendar model) as calendar) =
 
 showMonth : Calendar -> List (Html Msg)
 showMonth (Calendar model) =
-    List.map (showWeek model.zone) model.month
+    List.map (showWeek model.currentTime model.zone) model.month
 
 
-showWeek : Time.Zone -> List (Maybe Time.Posix) -> Html Msg
-showWeek zone week =
-    tr [] (List.map (showDate zone) week)
+showWeek : Time.Posix -> Time.Zone -> List (Maybe Time.Posix) -> Html Msg
+showWeek currentTime zone week =
+    tr [] (List.map (showDate currentTime zone) week)
 
-showDate : Time.Zone -> Maybe Time.Posix -> Html Msg
-showDate zone date =
+showDate : Time.Posix -> Time.Zone -> Maybe Time.Posix -> Html Msg
+showDate currentTime zone date =
         case date of
             Just d ->
+              if (Time.posixToMillis d) > (Time.posixToMillis currentTime) then
                   td [class "ph2 pv3 b relative"]
-                    [ span [class "db"] [text <| String.fromInt <| Time.toDay zone d]
-                    , span [class "absolute bottom-0 right-0 left-0 w-25 h-25 br-100 bg-red center"] []
+                    [ span [class "db gray"] [text <| String.fromInt <| Time.toDay zone d]]
+              else
+                  td [class "ph2 pv3 b relative pointer"]
+                    [ a [href <| "/log?date=" ++ (queryStringDate zone d), class "no-underline black"]
+                      [ span [class "db"] [text <| String.fromInt <| Time.toDay zone d]
+                      -- , span [class "absolute bottom-0 right-0 left-0 w-25 h-25 br-100 bg-red center"] []
+                      ]
                     ]
 
             Nothing ->
@@ -254,3 +265,35 @@ formatMonth month =
       Time.Oct -> "Oct"
       Time.Nov -> "Nov"
       Time.Dec -> "Dec"
+
+formatMonthNumber : Time.Month -> String
+formatMonthNumber month =
+    case month of
+      Time.Jan -> "01"
+      Time.Feb -> "02"
+      Time.Mar -> "03"
+      Time.Apr -> "04"
+      Time.May -> "05"
+      Time.Jun -> "06"
+      Time.Jul -> "07"
+      Time.Aug -> "08"
+      Time.Sep -> "09"
+      Time.Oct -> "10"
+      Time.Nov -> "11"
+      Time.Dec -> "12"
+
+formatDayNumber : String -> String
+formatDayNumber day =
+    if String.length day == 1 then
+      "0" ++ day
+    else
+      day
+
+queryStringDate : Time.Zone -> Time.Posix -> String
+queryStringDate zone posixTime =
+    let
+     year = String.fromInt <| Time.toYear zone posixTime
+     month = formatMonthNumber <| Time.toMonth zone posixTime
+     day = formatDayNumber <| String.fromInt <| Time.toDay zone posixTime
+    in
+     day ++ "-" ++ month ++ "-" ++ year
