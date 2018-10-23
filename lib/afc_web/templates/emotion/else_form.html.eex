@@ -1,6 +1,5 @@
 <div class="w-100 bg-white center pa3 mb5 f4">
-  <%= emoji_p_tag(@emotion, class: "pr3 pt3 tc mv4") %>
-
+  <%= emoji_img_tag(static_path(@conn, src_image(@emotion)), class: "db tc center mv4") %>
   <div class="">
     <%= custom_render_autoform(
       @conn,
