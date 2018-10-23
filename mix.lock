@@ -1,5 +1,5 @@
 %{
-  "autoform": {:git, "https://github.com/dwyl/autoform.git", "eaa1d76e858d1ed5b042270c821e14932ba470e3", [tag: "0.1"]},
+  "autoform": {:git, "https://github.com/dwyl/autoform.git", "c69ea945b64379471b0baa480b8bf7f5f7b33a99", [tag: "0.2"]},
   "bunt": {:hex, :bunt, "0.2.0", "951c6e801e8b1d2cbe58ebbd3e616a869061ddadcc4863d0a2182541acae9a38", [:mix], [], "hexpm"},
   "certifi": {:hex, :certifi, "2.4.2", "75424ff0f3baaccfd34b1214184b6ef616d89e420b258bb0a5ea7d7bc628f7f0", [:rebar3], [{:parse_trans, "~>3.3", [hex: :parse_trans, repo: "hexpm", optional: false]}], "hexpm"},
   "combine": {:hex, :combine, "0.10.0", "eff8224eeb56498a2af13011d142c5e7997a80c8f5b97c499f84c841032e429f", [:mix], [], "hexpm"},

@@ -1,0 +1,26 @@
+<%= component "day_week_month_bar" %>
+
+<div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month">
+  <p id="elm-calendar" class="pa3 ba br2 dib mb4">10th Oct 2019 (placeholder)</p>
+  <p class="tc f3 mb3">Today's Log</p>
+  <div class="center w-100 tc f4">
+    <%= emoji_p_tag(@emotion_log.emotion) %>
+
+    <div class="center tl flex mv3">
+      <p class="w-40 pl3 pl6-l">I felt:</p>
+      <p class="w-60"><%= format_emotion(@emotion_log.emotion) %></p>
+    </div>
+
+    <div class="center tl flex">
+      <p class="w-40 pl3 pl6-l">Because:</p>
+      <p class="w-60"><%= @emotion.reason %></p>
+    </div>
+
+  </div>
+
+  <%= component "trusted_share_btn", [conn: @conn] %>
+</div>
+
+<script type="text/javascript">
+  var millis = <%= @millis %>
+</script>

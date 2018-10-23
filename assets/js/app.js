@@ -22,4 +22,7 @@ import "phoenix_html"
 
 // import elm code
 // import Elm from "./elm.js"
-var app = Elm.Main.init({ node: document.getElementById("elm-calendar") })
+var app = Elm.Main.init({
+  node: document.getElementById("elm-calendar"),
+  flags: millis
+})

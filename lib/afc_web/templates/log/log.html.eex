@@ -1,0 +1,5 @@
+<%= component "day_week_month_bar" %>
+<div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month">
+  <p>display log</p>
+  </div>
+</div>

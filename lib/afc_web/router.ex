@@ -26,5 +26,6 @@ defmodule AfcWeb.Router do
 
     get "/", PageController, :index
     resources "/emotion", EmotionController, only: [:show, :create]
+    get "/log", LogController, :index
   end
 end

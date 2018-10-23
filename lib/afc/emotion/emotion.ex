@@ -15,6 +15,18 @@ defmodule Afc.Emotion do
     Repo.one(query)
   end
 
+  def day_emotion_log(user, date) do
+    start_date = date |> Timex.to_naive_datetime()
+    end_date = Timex.shift(start_date, days: 1)
+    query =
+      from e in EmotionLog,
+      where: e.user_id == ^user.id
+      and e.inserted_at > ^start_date
+      and e.inserted_at < ^end_date
+
+    Repo.one(query)
+  end
+
   def get_emotion_module_name(emotion) do
     emotion_str =
       case is_atom(emotion) do
