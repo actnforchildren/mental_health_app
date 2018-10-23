@@ -18,7 +18,7 @@
         {
           @module,
           custom_labels: %{reason: "Say it in your own words"},
-          exclude: Emotion.reason_list()
+          exclude: Emotion.reason_list() ++ [:feeling]
         },
         "</div>",
       ],

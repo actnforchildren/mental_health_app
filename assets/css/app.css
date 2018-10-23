@@ -78,4 +78,16 @@
   border-radius: 0.25rem;
 }
 
+.form-group-feeling > .form-group {
+  display: block;
+}
+
+.form-group-feeling > .form-group input {
+  margin-top: 0.5rem;
+  padding: 0.25rem;
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 0.25rem;
+}
+
 /* Autoform Style End */
