@@ -36,19 +36,26 @@ update : Msg -> Calendar -> Calendar
 update msg ((Calendar model) as calendar) =
     case msg of
       Toggle -> Calendar ({ model | open = not model.open })
-      NextMonth ->
-        let
-          day = firstNextMonth calendar
-          month = daysOfMonth model.zone day
-        in
-        Calendar {model | month = month }
+      NextMonth -> nextMonth calendar
 
-      PreviousMonth ->
-        let
-          day = firstPreviousMonth calendar
-          month = daysOfMonth model.zone day
-        in
-        Calendar {model | month = month }
+      PreviousMonth -> previousMonth calendar
+
+previousMonth : Calendar -> Calendar
+previousMonth ((Calendar model) as calendar) =
+  let
+    day = firstPreviousMonth calendar
+    month = daysOfMonth model.zone day
+  in
+  Calendar {model | month = month }
+
+
+nextMonth : Calendar -> Calendar
+nextMonth ((Calendar model) as calendar) =
+  let
+    day = firstNextMonth calendar
+    month = daysOfMonth model.zone day
+  in
+  Calendar {model | month = month }
 
 setZone : Time.Zone -> Calendar -> Calendar
 setZone zone (Calendar model) =
@@ -186,7 +193,7 @@ view calendar =
 
 showCalendar : Calendar -> Html Msg
 showCalendar ((Calendar model) as calendar) =
-  span []
+  span [id "calendar"]
   [ button [onClick Toggle, class "pa2 ba br2 dib mb2 pointer"] [text <| formatPosix model.zone model.posix]
   , div [class "relative"]
       [ div [ class "absolute top-0 left-0 bg-white pt3 w-100", classList [("dn", not model.open)]]
