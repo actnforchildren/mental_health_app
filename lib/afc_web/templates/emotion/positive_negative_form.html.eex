@@ -1,5 +1,5 @@
 <div class="w-100 bg-white center pa3 mb5 f4">
-  <%= render_emotion_reason(@emotion) %>
+  <%= render_emotion_reason(@emotion, @conn) %>
 
   <div class="">
     <%= custom_render_autoform(

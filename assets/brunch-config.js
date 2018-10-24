@@ -53,8 +53,7 @@ exports.config = {
       elmFolder: "elm",
       mainModules: ["src/Main.elm"],
       outputFolder: "../vendor",
-      outputFile: "elm.js",
-      makeParameters: ["--debug"]
+      outputFile: "elm.js"
     },
     babel: {
       // Do not use ES6 compiler in vendor code and elm compile js

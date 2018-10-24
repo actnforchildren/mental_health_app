@@ -1,7 +1,7 @@
 <div class="w-100 bg-white center pa3 mb5 f4">
   <div class="mv4 flex center w5-1">
-    <%= emoji_p_tag(@emotion, class: "pr3 pt3") %>
     <p class="mv2">
+      <%= emoji_img_tag(static_path(@conn, src_image(@emotion)), class: "w-25 fl") %>
       Sometimes it's hard to know what it is that you're feeling. But often,
       our bodies can give us helpful clues.
     </p>
