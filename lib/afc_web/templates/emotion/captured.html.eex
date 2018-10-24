@@ -2,5 +2,8 @@
   <p class="tc b f4 mv4">Well done</p>
   <p class="tc mb3">Today's log has been completed.</p>
   <p class="tc mb5">Do you want to share it with someone?</p>
-  <p class="tc">no yes</p>
+</div>
+<div class="center tc">
+  <p class="dib w4 ba br2 b pv3 mr3">NO</p>
+  <p class="dib w4 ba br2 b pv3">YES</p>
 </div>

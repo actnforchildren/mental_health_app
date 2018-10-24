@@ -4,12 +4,26 @@ defmodule AfcWeb.Auth do
   alias Afc.{Repo, User}
   alias AfcWeb.Router.Helpers
 
+  @moduledoc """
+  Auth module
+  """
+
   def init(opts), do: opts
 
   def call(conn, _opts) do
     user_id = get_session(conn, :user_id)
     user = user_id && Repo.get(User, user_id)
     assign(conn, :current_user, user)
+  end
+
+  def login_with_username_and_pin(conn, username, pin) do
+    user = Repo.get_by(User, username: username)
+
+    if user && user.pin == pin do
+      {:ok, login(conn, user)}
+    else
+      {:error, conn}
+    end
   end
 
   def login(conn, user) do

@@ -6,7 +6,6 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 
-
 type alias Model =
   { open : Bool
   , currentTime: Time.Posix

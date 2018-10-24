@@ -2,7 +2,7 @@
 <div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month">
   <p id="elm-calendar" class="pa3 ba br2 dib mb4"></p>
   <h1 class="tc"><%= @date_title %></h1>
-  <h1 class="tc f1">🤷🏽‍♀️</h1>
+  <%= emoji_img_tag(static_path(@conn, src_image("no_log")), class: "db center") %>
   <p class="center tc pv4">
     This day was not logged. but don't worry, you came back
     and that's what's important.

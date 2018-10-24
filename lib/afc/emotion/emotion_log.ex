@@ -3,6 +3,8 @@ defmodule Afc.Emotion.EmotionLog do
   import Ecto.Changeset
   alias Afc.{EctoEnum.EmotionEnum, User}
 
+  @moduledoc false
+
   schema "emotion_logs" do
     field :emotion, EmotionEnum
     field :emotion_id, :id

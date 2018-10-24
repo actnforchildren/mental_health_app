@@ -1,4 +1,7 @@
 /* This file is for your main application css. */
+body {
+  font-family: 'Rubik', sans-serif;
+}
 
 .afc-bg-pink {
   background-color: #F5BABF;
@@ -6,6 +9,18 @@
 
 .afc-b--pink {
   border-color: #F5BABF;
+}
+
+.afc-red {
+  color: #E0001D;
+}
+
+.afc-b--red {
+  border-color: #DF001C;
+}
+
+.afc-bg-green {
+  background-color: #8FCC8F;
 }
 
 .emoji-font-size {
@@ -22,14 +37,6 @@
 
 .mt-day-week-month {
   margin-top: 3rem;
-}
-
-.afc-b--red {
-  border-color: #DF001C;
-}
-
-.afc-bg-green {
-  background-color: #8FCC8F;
 }
 
 .w5-1 {
@@ -78,4 +85,46 @@
   border-radius: 0.25rem;
 }
 
+.form-group-feeling > .form-group {
+  display: block;
+}
+
+.form-group-feeling > .form-group input {
+  margin-top: 0.5rem;
+  padding: 0.25rem;
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 0.25rem;
+}
+
 /* Autoform Style End */
+
+.username {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid black;
+}
+
+.username:focus {
+  border-color: #3B667C;
+}
+
+.pin {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid black;
+}
+
+.pin:focus {
+  border-color: #3B667C;
+}
+
+.w4-5 {
+  width: 12rem;
+}
+
+.h2-5 {
+  height: 3rem;
+}

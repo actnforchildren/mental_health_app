@@ -1,6 +1,6 @@
 defmodule AfcWeb.PageController do
   use AfcWeb, :controller
-  alias Afc.{Emotion, Repo}
+  alias Afc.{Emotion}
 
   def index(conn, _params) do
     case Emotion.todays_emotion_log(conn.assigns.current_user) do
