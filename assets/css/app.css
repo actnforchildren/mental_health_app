@@ -11,6 +11,10 @@ body {
   border-color: #F5BABF;
 }
 
+.afc-blue {
+  color: #3B667C;
+}
+
 .afc-red {
   color: #E0001D;
 }
@@ -21,10 +25,6 @@ body {
 
 .afc-bg-green {
   background-color: #8FCC8F;
-}
-
-.emoji-font-size {
-  font-size: 64pt;
 }
 
 .-mt2 {
@@ -119,6 +119,14 @@ body {
 
 .pin:focus {
   border-color: #3B667C;
+}
+
+.w3-5 {
+  width: 6rem;
+}
+
+.h3-5 {
+  height: 6rem;
 }
 
 .w4-5 {

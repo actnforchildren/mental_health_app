@@ -2,7 +2,6 @@ defmodule AfcWeb.ComponentHelpers do
   alias AfcWeb.ComponentView
   use Phoenix.HTML
 
-
   @moduledoc false
 
   def component(template, assigns \\ []) do
@@ -15,13 +14,7 @@ defmodule AfcWeb.ComponentHelpers do
   end
 
   def emoji_img_tag(src, opts \\ []) do
-    case Keyword.fetch(opts, :class) do
-      {:ok, classes} ->
-        opts = Keyword.delete(opts, :class)
-        content_tag(:img, "", [class: "w4 " <> classes, src: src] ++ opts)
-      :error ->
-        content_tag(:img, "", [class: "w4 ", src: src] ++ opts)
-    end
+    content_tag(:img, "", [src: src] ++ opts)
   end
 
   def render_emotion_reason(emotion, conn) do
