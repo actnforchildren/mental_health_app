@@ -5,10 +5,10 @@
     <%= text_input f, :username, placeholder: "Enter Username", class: "username f3 tc mv4", onfocus: "this.placeholder=''" %>
 
     <div class="flex w5 center pa3 justify-around mb5">
-      <%= number_input f, :pin1, maxlength: "1", class: "w2 pin tc f3" %>
-      <%= number_input f, :pin2, maxlength: "1", class: "w2 pin tc f3" %>
-      <%= number_input f, :pin3, maxlength: "1", class: "w2 pin tc f3" %>
-      <%= number_input f, :pin4, maxlength: "1", class: "w2 pin tc f3" %>
+      <%= number_input f, :pin1, maxlength: "1", class: "w2 pin tc f3 br0 ph0" %>
+      <%= number_input f, :pin2, maxlength: "1", class: "w2 pin tc f3 br0 ph0" %>
+      <%= number_input f, :pin3, maxlength: "1", class: "w2 pin tc f3 br0 ph0" %>
+      <%= number_input f, :pin4, maxlength: "1", class: "w2 pin tc f3 br0 ph0" %>
     </div>
 
     <%= submit "Go", class: "w4-5 h2-5 afc-bg-green bn br2" %>
