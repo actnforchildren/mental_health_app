@@ -22,6 +22,10 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:user_id]
 
+config :afc, Afc.Mailer,
+  adapter: Bamboo.MailgunAdapter,
+  api_key: Map.fetch!(System.get_env(), "MAILGUN_API_KEY"),
+  domain: Map.fetch!(System.get_env(), "MAILGUN_DOMAIN")
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

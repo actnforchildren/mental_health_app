@@ -29,12 +29,14 @@ defmodule AfcWeb.EmotionController do
         emotion_params =
           %{emotion: emotion_str, emotion_id: captured_emotion.id}
 
-        %EmotionLog{}
+        log = %EmotionLog{}
         |> EmotionLog.changeset(emotion_params)
         |> Changeset.put_assoc(:user, conn.assigns.current_user)
         |> Repo.insert!()
 
-        redirect(conn, to: emotion_path(conn, :show, "captured"))
+        date = Timex.format!(Timex.now(), "{0D}-{0M}-{YYYY}")
+        render conn, "captured.html", log_id: log.id, date: date
+        # redirect(conn, to: emotion_path(conn, :show, "captured"))
 
       {:error, changeset} ->
         assigns = [changeset: changeset, module: emotion_map.module]
