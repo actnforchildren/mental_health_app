@@ -2,15 +2,12 @@
   <p class="tc b f4 mv4">Well done</p>
   <p class="tc mb3">Today's log has been completed.</p>
   <p class="tc mb5">Do you want to share it with someone?</p>
-</div>
-<div class="center tc">
-  <!-- <p class="dib w4 ba br2 b pv3 mr3">NO</p> -->
-  <a href="/" class"nounderline dib w4 ba br2 b pv3 mr3">NO</a>
   <%= form_for @conn, "/share", fn f -> %>
-    <input type="hidden" name="emotion_log_id" value="<%= @log_id %>">
-    <input type="hidden" name="date" value="<%= @date %>">
-    <%= submit("YES", class: "dib w4 ba br2 b pv3") %>
+  <input type="hidden" name="emotion_log_id" value="<%= @log_id %>">
+  <input type="hidden" name="date" value="<%= @date %>">
+  <div class="center tc">
+    <a href="/" class="no-underline dib w-40 ba br2 b pv3 mr3 bg-white b--black black pointer">NO</a>
+    <%= submit("YES", class: "dib w-40 ba br2 b pv3 bg-white b--black pointer") %>
+  </div>
   <% end %>
-
-  <!-- <p class="dib w4 ba br2 b pv3">YES</p> -->
 </div>

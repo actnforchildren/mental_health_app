@@ -195,7 +195,7 @@ showCalendar ((Calendar model) as calendar) =
   span [id "calendar"]
   [ button [onClick Toggle, class "pa2 ba br2 dib mb2 pointer b--black bg-white"]
     [ span [class "v-mid"] [text <| formatPosix model.zone model.posix]
-    , img [class "w2 v-mid", src "/images/calendar.png"] []
+    , img [class "w2 v-mid ml2", src "/images/calendar.png"] []
     ]
   , div [class "relative"]
       [ div [ class "absolute top-0 left-0 bg-white pt3 w-100", classList [("dn", not model.open)]]
