@@ -144,3 +144,11 @@ body {
 #emotion_info_checkbox:checked ~ #emotion-info-name-div {
   background-color: pink;
 }
+
+#emotion_info_arrow {
+  transform: rotate(180deg);
+}
+
+#emotion_info_checkbox:checked ~ #emotion-info-name-div > #emotion_info_arrow {
+  transform: rotate(0deg);
+}

@@ -1,4 +1,4 @@
-<div class="flex fixed bottom-0 h3 w-100 tc bg-white bt afc-b--pink">
+<div class="flex fixed bottom-0 h3 w-100 tc bg-white bt afc-b--pink z-max">
   <a class="dib w-25 pointer link pt2 black" href="/">
     <p class="db mv1">Home</p>
   </a>
