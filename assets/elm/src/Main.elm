@@ -5,13 +5,13 @@ import Html.Events exposing (onClick)
 import Task
 import Time
 import Time.Extra
-
+import Ports
 main =
   Browser.element
     { init = init
     , view = view
     , update = update
-    , subscriptions = \_ -> Sub.none
+    , subscriptions = subscription
     }
 
 -- MODEL
@@ -37,6 +37,7 @@ type Msg
     = CurrentTime Time.Posix
     | CurrentZone Time.Zone
     | CalendarMsg Calendar.Msg
+    | Swipe String
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
@@ -55,6 +56,27 @@ update msg model =
 
         CalendarMsg calendarMsg ->
           ({ model | calendar = Calendar.update calendarMsg model.calendar }, Cmd.none)
+
+        Swipe direction ->
+          case direction of
+            "right" ->
+              let
+                calendar = Calendar.previousMonth model.calendar
+              in
+              ({model | calendar = calendar}, Cmd.none)
+
+            "left" ->
+              let
+                calendar = Calendar.nextMonth model.calendar
+              in
+              ({model | calendar = calendar}, Cmd.none)
+
+            _ -> (model, Cmd.none)
+
+subscription : Model -> Sub Msg
+subscription model =
+  Sub.batch [ Ports.swipe Swipe ]
+
 -- VIEW
 
 view : Model -> Html Msg
