@@ -136,3 +136,11 @@ body {
 .h2-5 {
   height: 3rem;
 }
+
+#emotion_info_checkbox:checked ~ #emotion_info_more {
+  display: block;
+}
+
+#emotion_info_checkbox:checked ~ #emotion-info-name-div {
+  background-color: pink;
+}

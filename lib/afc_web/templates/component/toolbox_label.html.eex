@@ -1,0 +1,14 @@
+<label>
+  <input type="checkbox" id="emotion_info_checkbox" class="dn">
+  <div class="pl3 flex items-center bb afc-b--pink" id="emotion-info-name-div">
+    <p class="pv4 pl2 w-90"><%= @text %></p>
+    <p class="">></p> <!-- placeholder till assets are in app -->
+  </div>
+  <div class="dn" id="emotion_info_more">
+    <div class="w-90 center mb3">
+      <%= for {num, text} <- @dropdown do %>
+        <%= component "toolbox_reason", num: num, text: text %>
+      <% end %>
+    </div>
+  </div>
+</label>

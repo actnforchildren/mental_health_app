@@ -1,35 +1,23 @@
 <div class="w-90 center pa3 pb4 tc f4">
-  <p class="b mb3">This is your coping toolbox.</p>
+  <p class="b mv3">This is your coping toolbox.</p>
   <p class="center ph3 mb3">Come here any time you need to practise a coping strategy.</p>
 </div>
 
 <div class="bg-white center pa3 pt4 mb5">
-  <p class="pl2 lh-title mb3">Find coping strategies that work best for what you’re feeling.</p>
 
-  <div class="ph4 flex items-center pb2 bb afc-b--pink mb2">
-    <div class="w-20 mh3 mw4">
-      <%= emoji_img_tag(static_path(@conn, src_image("sad")), class: "") %>
-    </div>
-    <p class="w-80 f4 pl3 afc-blue">Sadness</p>
+  <div class="w-70-ns center">
+    <p class="pl2 pb2 lh-title mb3">Find coping strategies that work best for what you’re feeling.</p>
+
+    <%= component "toolbox_link", conn: @conn, image: "sad", link_text: "Sadness" %>
+    <%= component "toolbox_link", conn: @conn, image: "angry", link_text: "Anger" %>
+    <%= component "toolbox_link", conn: @conn, image: "worried", link_text: "Worry" %>
+    <%= component "toolbox_link", conn: @conn, image: "", link_text: "More Info..." %>
+    <!-- more info left blank for now. will fill when asset is in project -->
   </div>
 
-  <div class="ph4 flex items-center pb2 bb afc-b--pink mb2">
-    <div class="w-20 mh3 mw4">
-      <%= emoji_img_tag(static_path(@conn, src_image("angry")), class: "") %>
-    </div>
-    <p class="w-80 f4 pl3 afc-blue">Anger</p>
-  </div>
-
-  <div class="ph4 flex items-center pb2 bb afc-b--pink mb2">
-    <div class="w-20 mh3 mw4">
-      <%= emoji_img_tag(static_path(@conn, src_image("worried")), class: "") %>
-    </div>
-    <p class="w-80 f4 pl3 afc-blue">Worry</p>
-  </div>
-
-  <div class="ph4 flex items-center pb2 bb afc-b--pink mb2">
-    <div class="w-20 mh3 mw4">
-    </div>
-    <p class="w-80 f4 pl3 afc-blue">More Info...</p>
+  <div class="w-70-ns center">
+    <%= component "toolbox_sadness" %>
+    <%= component "toolbox_anger" %>
+    <%= component "toolbox_worry" %>
   </div>
 </div>
