@@ -1,0 +1,5 @@
+<div class="flex items-baseline justify-center <%= @class %>">
+  <img src="https://www.actionforchildren.org.uk/images/bracket-bottom-left.png" class="container-end container-left">
+  <div class="dib container-mid"></div>
+  <img src="https://www.actionforchildren.org.uk/images/bracket-bottom-right.png" class="container-end container-right">
+</div>
