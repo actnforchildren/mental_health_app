@@ -9,8 +9,10 @@
 
 <div class="">
   <div class="mv4 flex center w5-1">
-    <div class="">
-      <%= emoji_img_tag(static_path(@conn, src_image(@emotion)), class: "fl w-15") %>
+    <div class="w-40 pl3 mt2">
+      <%= emoji_img_tag(static_path(@conn, src_image(@emotion))) %>
+    </div>
+    <div class="w-60 pl3">
       <p class="mv2">I'm sorry you're feeling <%= @emotion %> today.</p>
       <p class="mv2">Now is a good time to think about why you may have felt that way</p>
     </div>

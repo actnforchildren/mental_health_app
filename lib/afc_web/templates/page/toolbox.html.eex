@@ -1,0 +1,20 @@
+<div class="w-90 center pa3 pb4 tc f4">
+  <p class="b mv3">This is your coping toolbox.</p>
+  <p class="center ph3 mb3">Come here any time you need to practise a coping strategy.</p>
+</div>
+
+<div class="bg-white center pa3 pt4 mb4 pb4">
+
+  <div class="w-70-ns center">
+    <p class="pl2 pb2 lh-title mb3">Find coping strategies that work best for what you’re feeling.</p>
+
+    <%= component "toolbox_link", conn: @conn, image: "sad", link_text: "Sadness", link: "#title-sadness" %>
+    <%= component "toolbox_link", conn: @conn, image: "angry", link_text: "Anger", link: "#title-anger" %>
+    <%= component "toolbox_link", conn: @conn, image: "worried", link_text: "Worry", link: "#title-worry" %>
+    <%= component "toolbox_link", conn: @conn, image: "info", link_text: "More Info...", link: "/" %>
+
+    <%= component "toolbox_sadness", conn: @conn, id: "title-sadness" %>
+    <%= component "toolbox_anger", conn: @conn, id: "title-anger" %>
+    <%= component "toolbox_worry", conn: @conn, id: "title-worry" %>
+  </div>
+</div>

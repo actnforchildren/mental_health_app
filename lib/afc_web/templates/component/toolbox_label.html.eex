@@ -1,0 +1,16 @@
+<label>
+  <input type="checkbox" id="emotion_info_checkbox" class="dn">
+  <div class="pl3 flex items-center bb afc-b--pink" id="emotion-info-name-div">
+    <p class="pv4 pl2 w-80 w-90-ns"><%= @text %></p>
+    <div class="w-20 w-10-ns tc" id="emotion_info_arrow">
+      <%= emoji_img_tag(static_path(@conn, src_image("arrow")), class: "mw1") %>
+    </div>
+  </div>
+  <div class="dn" id="emotion_info_more">
+    <div class="w-90 center">
+      <%= for {num, text} <- @dropdown do %>
+        <%= component "toolbox_reason", num: num, text: text %>
+      <% end %>
+    </div>
+  </div>
+</label>

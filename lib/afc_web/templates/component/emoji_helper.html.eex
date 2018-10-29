@@ -1,6 +1,8 @@
-<div class="tc w4 ph3">
+<div class="tc w4">
   <%= link to: emotion_path(@conn, :show, @page), class: "pointer link black" do %>
-    <%= emoji_img_tag(static_path(@conn, src_image(@page))) %>
+    <div class="ph3 center">
+      <%= emoji_img_tag(static_path(@conn, src_image(@page))) %>
+    </div>
     <p><%= @text %></p>
   <% end %>
 </div>

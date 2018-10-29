@@ -2,7 +2,6 @@ defmodule AfcWeb.ComponentHelpers do
   alias AfcWeb.ComponentView
   use Phoenix.HTML
 
-
   @moduledoc false
 
   def component(template, assigns \\ []) do
@@ -15,25 +14,7 @@ defmodule AfcWeb.ComponentHelpers do
   end
 
   def emoji_img_tag(src, opts \\ []) do
-    case Keyword.fetch(opts, :class) do
-      {:ok, classes} ->
-        opts = Keyword.delete(opts, :class)
-        content_tag(:img, "", [class: "w4 " <> classes, src: src] ++ opts)
-      :error ->
-        content_tag(:img, "", [class: "w4 ", src: src] ++ opts)
-    end
-  end
-
-  def emoji_p_tag(emotion, opts \\ []) do
-    emoji = string_to_emoji(emotion)
-
-    case Keyword.fetch(opts, :class) do
-      {:ok, classes} ->
-        opts = Keyword.delete(opts, :class)
-        content_tag(:p, emoji, [class: "emoji-font-size " <> classes] ++ opts)
-      :error ->
-        content_tag(:p, emoji, [class: "emoji-font-size"] ++ opts)
-    end
+    content_tag(:img, "", [src: src] ++ opts)
   end
 
   def render_emotion_reason(emotion, conn) do
@@ -43,22 +24,6 @@ defmodule AfcWeb.ComponentHelpers do
       component("positive_emotion_reason", emotion: emotion, conn: conn)
     else
       component("negative_emotion_reason", emotion: emotion, conn: conn)
-    end
-  end
-
-  defp string_to_emoji(emotion) do
-    emotion = if is_atom(emotion), do: Atom.to_string(emotion), else: emotion
-
-    emotion
-    |> String.downcase()
-    |> case do
-      "happy" -> "😆"
-      "excited" -> "🤩"
-      "angry" -> "😡"
-      "sad" -> "😭"
-      "worried" -> "😬"
-      "unsure" -> "🤔"
-      "else" -> "😶"
     end
   end
 end

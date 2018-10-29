@@ -1,0 +1,4 @@
+<div class="flex mv3">
+  <p><%= @num %>.</p>
+  <p class="pl3"><%= @text %></p>
+</div>

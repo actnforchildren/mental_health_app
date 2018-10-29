@@ -1,6 +1,8 @@
 <div class="mv4 flex center w5-1">
-  <div class="">
-    <%= emoji_img_tag(static_path(@conn, src_image(@emotion)), class: "fl w-15") %>
+  <div class="w-40 pl3 mt2">
+    <%= emoji_img_tag(static_path(@conn, src_image(@emotion))) %>
+  </div>
+  <div class="w-60 pl3">
     <p class="mv2">That's great!</p>
     <p class="mv2">What made you <%= @emotion %> today?</p>
   </div>

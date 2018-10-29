@@ -1,0 +1,6 @@
+<div class="ph4 flex items-center pb2 bb afc-b--pink mb2">
+  <div class="w-20 mh3 mw4 ph3-ns tc">
+    <%= emoji_img_tag(static_path(@conn, src_image(@image)), class: "") %>
+  </div>
+  <a href="<%= @link %>" class="w-80 f4 pl3 afc-blue"><%= @link_text %></a>
+</div>

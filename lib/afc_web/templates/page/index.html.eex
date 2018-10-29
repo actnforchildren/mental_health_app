@@ -22,7 +22,7 @@
 
     <div class="flex justify-between pt3 ph1 mb3">
       <%= component "emoji_helper", [text: "Something else", page: "else", conn: @conn] %>
-      <div class="tc w4 ph3"></div>
+      <div class="w4"></div>
     </div>
   </div>
 </div>
