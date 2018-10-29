@@ -1,9 +1,10 @@
 defmodule AfcWeb.PageController do
   use AfcWeb, :controller
   alias Afc.{Emotion}
+  use Timex
 
   def index(conn, _params) do
-    case Emotion.todays_emotion_log(conn.assigns.current_user) do
+    case Emotion.get_emotion_log_for_date(conn.assigns.current_user, Timex.today()) do
       nil ->
         render conn, "index.html", millis: (Timex.to_unix Timex.now) * 1000
       _ ->

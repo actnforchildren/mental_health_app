@@ -23,7 +23,51 @@ import "./login"
 
 // import elm code
 // import Elm from "./elm.js"
-var app = Elm.Main.init({
-  node: document.getElementById("elm-calendar"),
-  flags: millis
-})
+var calendar = document.getElementById("elm-calendar");
+if (calendar) {
+  var app = Elm.Main.init({
+    node: calendar,
+    flags: millis
+  })
+
+  var calendar = document.getElementById("calendar");
+  if(calendar) {
+
+    setTimeout(function() {
+      swipe(calendar, function(dir) {
+        app.ports.swipe.send(dir);
+      });
+    });
+  }
+
+}
+
+function swipe(el, callback){
+  var swipedir;
+  var startX;
+  var startY;
+  var distX;
+  var distY;
+  var threshold = 50;
+  var restraint = 100;
+
+  el.addEventListener('touchstart', function(e){
+    var touchobj = e.changedTouches[0];
+    swipedir = 'none';
+    startX = touchobj.pageX;
+    startY = touchobj.pageY;
+
+  }, false);
+
+  el.addEventListener('touchend', function(e){
+    var touchobj = e.changedTouches[0]
+    distX = touchobj.pageX - startX;
+    distY = touchobj.pageY - startY;
+
+    if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+      swipedir = (distX < 0) ? 'left' : 'right';
+    }
+
+    callback(swipedir);
+  }, false);
+}
