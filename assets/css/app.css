@@ -137,6 +137,7 @@ body {
   height: 3rem;
 }
 
+
 #emotion_info_checkbox:checked ~ #emotion_info_more {
   display: block;
 }
@@ -151,4 +152,22 @@ body {
 
 #emotion_info_checkbox:checked ~ #emotion-info-name-div > #emotion_info_arrow {
   transform: rotate(0deg);
+}
+
+.container-left {
+  margin-right: -3px;
+}
+
+.container-right {
+  margin-left: -3px;
+}
+
+.container-end {
+  width: 22px;
+}
+
+.container-mid {
+  background-color: #D6001C;
+  width: 250px;
+  height: 9px;
 }
