@@ -15,10 +15,35 @@ defmodule Afc.Email do
   end
 
   def emotion_log_to_html(emotion_log, emotion) do
+    logged_at = "#{emotion_log.inserted_at.day}-#{emotion_log.inserted_at.month}-#{emotion_log.inserted_at.year}"
+
     """
     <strong>#{emotion_log.emotion}</strong>
+    <p>#{logged_at}</p>
+    <p>reason list:</p>
+    #{list_reasons(emotion)}
+    <p>reason text:</p>
     <p>#{emotion.reason}</p>
     """
+  end
+
+  def list_reasons(log) do
+    log
+    |> Map.from_struct
+    |> Enum.filter(fn {_, v} -> v == true end)
+    |> Keyword.keys
+    |> Enum.map(fn r ->
+      if r == :else do
+        "Something else"
+      end
+
+      if r == :"family/home" do
+        "Family / Home"
+      end
+
+      String.capitalize(to_string r)
+    end)
+    |> Enum.join(", ")
   end
 
   def emotion_to_text(emotion_log, emotion) do
