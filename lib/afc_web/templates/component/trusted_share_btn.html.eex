@@ -1,6 +1,7 @@
 <div class="tc mt5 mb3 f4">
-  <button type="button" class="b ba afc-b--red ph3 pv2 br2 bg-white">Share with Trusted Adult</button>
-  <!-- <%= form_for @conn, "/", fn f -> %>
-    <%= submit("Share with Trusted Adult", class: "b ba afc-b--red ph3 pv2 br2 bg-white") %>
-  <% end %> -->
+  <%= form_for @conn, "/share", fn f -> %>
+    <input type="hidden" name="emotion_log_id" value="<%= @emotion_log.id %>">
+    <input type="hidden" name="date" value="<%= @date %>">
+    <%= submit("Share with Trusted Adult", class: "b ba afc-b--red ph3 pv2 br2 bg-white pointer") %>
+  <% end %>
 </div>

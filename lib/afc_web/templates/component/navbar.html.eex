@@ -11,5 +11,5 @@
     <p class="db mv1">Help</p>
   </a>
 
-  <%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete", class: "dib w-25 pointer link pt2 black" %>
+  <%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete", class: "dib w-25 pointer link pt2 black mv1" %>
 </div>

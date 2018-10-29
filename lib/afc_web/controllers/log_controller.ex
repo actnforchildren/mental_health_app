@@ -28,7 +28,12 @@ defmodule AfcWeb.LogController do
                 else
                   Timex.format!(date, "{WDfull} {D} {Mfull}")
                 end
-              render conn, "single.html", emotion_log: emotion_log, emotion: emotion, millis: selected_date * 1000, date_title: date_title
+              render conn, "single.html",
+                emotion_log: emotion_log,
+                emotion: emotion,
+                millis: selected_date * 1000,
+                date_title: date_title,
+                date: params["date"]
           end
         end
       _ ->

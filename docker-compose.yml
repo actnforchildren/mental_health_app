@@ -8,5 +8,7 @@ services:
       - .:/app
     depends_on:
       - db
+    env_file:
+      - ./.env
   db:
     image: postgres:10.5
