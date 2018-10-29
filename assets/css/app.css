@@ -128,3 +128,21 @@ body {
 .h2-5 {
   height: 3rem;
 }
+
+.container-left {
+  margin-right: -3px;
+}
+
+.container-right {
+  margin-left: -3px;
+}
+
+.container-end {
+  width: 22px;
+}
+
+.container-mid {
+  background-color: #D6001C;
+  width: 250px;
+  height: 9px;
+}
