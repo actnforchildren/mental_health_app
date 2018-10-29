@@ -24,8 +24,8 @@ defmodule AfcWeb.Router do
   scope "/", AfcWeb do
     pipe_through [:browser, :authenticate_user]
 
-    resources "/", PageController, only: [:index, :show]
     resources "/emotion", EmotionController, only: [:show, :create]
     get "/log", LogController, :index
+    resources "/", PageController, only: [:index, :show]
   end
 end
