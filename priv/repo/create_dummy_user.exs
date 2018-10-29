@@ -11,10 +11,11 @@ emotions = [
   {Worried, "worried"}
 ]
 
+trusted_adult_email = Map.fetch!(System.get_env(), "EMAIL_TRUSTED_ADULT")
 adult =
-  case Repo.get_by(TrustedAdult, email: "trusted@adult.com") do
+  case Repo.get_by(TrustedAdult, email: trusted_adult_email) do
     nil ->
-      Repo.insert!(%TrustedAdult{email: "trusted@adult.com"})
+      Repo.insert!(%TrustedAdult{email: trusted_adult_email})
     adult ->
       adult
   end

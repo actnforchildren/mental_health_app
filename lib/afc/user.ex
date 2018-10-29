@@ -1,13 +1,14 @@
 defmodule Afc.User do
   use Ecto.Schema
   import Ecto.Changeset
+  alias Afc.{TrustedAdult}
 
   @moduledoc false
 
   schema "users" do
     field :pin, :integer
     field :username, :string
-    field :trusted_adult_id, :id
+    belongs_to :trusted_adult, TrustedAdult
 
     timestamps()
   end

@@ -1,7 +1,7 @@
 <%= component "day_week_month_bar" %>
 
 <div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month">
-  <p id="elm-calendar" class="pa3 ba br2 dib mb4">10th Oct 2019 (placeholder)</p>
+  <p id="elm-calendar" class="pa3 ba br2 dib mb4"></p>
   <p class="tc f3 mb3"><%= @date_title %></p>
   <div class="center w-100 tc f4">
     <%= emoji_img_tag(static_path(@conn, src_image(@emotion_log.emotion))) %>
@@ -16,8 +16,14 @@
     </div>
 
   </div>
-
-  <%= component "trusted_share_btn", [conn: @conn] %>
+  <%= if not @emotion_log.shared do %>
+    <%= component "trusted_share_btn", [conn: @conn, emotion_log: @emotion_log, date: @date] %>
+  <% else %>
+  <div class="tl pt3 pl3">
+    <img class="w2 v-mid" src="<%= static_path(@conn, "/images/success-icon.png") %> " alt="success">
+    <span>Shared with trusted adult</span>
+  </span>
+  <% end %>
 </div>
 
 <script type="text/javascript">
