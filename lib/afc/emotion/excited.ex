@@ -9,7 +9,6 @@ defmodule Afc.Emotion.Excited do
     field :school, :boolean, default: false
     field :"family/home", :boolean, default: false
     field :community, :boolean, default: false
-    field :bullying, :boolean, default: false
     field :exams, :boolean, default: false
     field :teachers, :boolean, default: false
     field :classwork, :boolean, default: false
@@ -24,7 +23,7 @@ defmodule Afc.Emotion.Excited do
   def changeset(excited, attrs) do
     excited
     |> cast(attrs, [
-      :friends, :school, :"family/home", :community, :bullying, :exams,
+      :friends, :school, :"family/home", :community, :exams,
       :teachers, :classwork, :homework, :else, :reason
     ])
   end
