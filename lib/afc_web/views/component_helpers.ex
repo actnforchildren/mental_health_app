@@ -26,4 +26,12 @@ defmodule AfcWeb.ComponentHelpers do
       component("negative_emotion_reason", emotion: emotion, conn: conn)
     end
   end
+
+  def pick_toolbox(emotion) do
+    case emotion do
+      "angry" -> "toolbox_anger"
+      "sad" -> "toolbox_sadness"
+      "worried" -> "toolbox_worry"
+    end
+  end
 end

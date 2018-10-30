@@ -1,7 +1,7 @@
-<div class="w-100 bg-white center pa3 mb5 f4">
+<div class="w-100 bg-white center pa3 mb5 f4 relative">
   <%= render_emotion_reason(@emotion, @conn) %>
 
-  <div class="">
+  <div class="" id="autoform-checklist">
     <%= custom_render_autoform(
       @conn,
       :create,
