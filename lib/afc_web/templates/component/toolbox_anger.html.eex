@@ -1,8 +1,10 @@
-<div class="mt5 f4">
+<div class="mt5 f4 mb5">
   <p class="b tc f4 mb3" id="<%= @id %>">Anger</p>
 
-  <%= component "toolbox_label", conn: @conn, text: "Breathe deeply", dropdown: [] %>
-  <%= component "toolbox_label", conn: @conn, text: "Run your wrists under cold water", dropdown: [] %>
-  <%= component "toolbox_label", conn: @conn, text: "Punch something soft like a pillow", dropdown: [] %>
-  <%= component "toolbox_label", conn: @conn, text: "Speak to someone", dropdown: [] %>
+  <div class="toolbox-shadow">
+    <%= component "toolbox_label", conn: @conn, text: "Breathe deeply", dropdown: [] %>
+    <%= component "toolbox_label", conn: @conn, text: "Run your wrists under cold water", dropdown: [] %>
+    <%= component "toolbox_label", conn: @conn, text: "Punch something soft like a pillow", dropdown: [] %>
+    <%= component "toolbox_label", conn: @conn, text: "Speak to someone", dropdown: [] %>
+  </div>
 </div>

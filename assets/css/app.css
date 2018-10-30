@@ -171,3 +171,7 @@ body {
   width: 250px;
   height: 9px;
 }
+
+.toolbox-shadow {
+  box-shadow: 2px 5px 20px 0 rgba(0,0,0,.1);
+}
