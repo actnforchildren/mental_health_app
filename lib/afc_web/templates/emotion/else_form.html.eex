@@ -1,6 +1,6 @@
 <div class="w-100 bg-white center pa3 mb5 f4">
   <%= emoji_img_tag(static_path(@conn, src_image(@emotion)), class: "db tc center mv4") %>
-  <div class="">
+  <div class="mw7 center mb3">
     <%= custom_render_autoform(
       @conn,
       :create,
@@ -15,7 +15,7 @@
         "</div>",
         "<p class=\"w-90 w-40-ns mv2 lh-title center\">Sometimes it’s hard to know what it is that you’re feeling.</p>",
         "<p class=\"w-90 w-40-ns lh-title center mb4\">I recommend you try to describe how you’re feeling, and send this information to someone. That way they can help you understand this better.</p>",
-        "<div class=\"form-group-checklist w-60 w-30-ns center\">",
+        "<div class=\"form-group-checklist w-60 w-40-ns center\">",
         {
           @module,
           custom_labels: %{"family/home": "Family / Home", else: "Something Else"},

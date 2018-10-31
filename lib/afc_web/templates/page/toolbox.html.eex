@@ -5,7 +5,7 @@
 
 <div class="bg-white center pa3 pt4 mb5 pb5">
 
-  <div class="w-70-ns center">
+  <div class="mw7 center">
     <p class="pl2 pb2 lh-title mb3">Find coping strategies that work best for what you’re feeling.</p>
 
     <%= component "toolbox_link", conn: @conn, image: "sad", link_text: "Sadness", link: "#title-sadness" %>

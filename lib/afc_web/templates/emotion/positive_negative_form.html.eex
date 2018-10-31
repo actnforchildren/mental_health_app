@@ -1,12 +1,12 @@
 <div class="w-100 bg-white center pa3 mb5 f4 relative">
   <%= render_emotion_reason(@emotion, @conn) %>
 
-  <div class="" id="autoform-checklist">
+  <div class="mw7 center mb3" id="autoform-checklist">
     <%= custom_render_autoform(
       @conn,
       :create,
       [
-        "<div class=\"form-group-checklist w-60 w-30-ns center\">",
+        "<div class=\"form-group-checklist w-60 w-40-ns center\">",
         {
           @module,
           custom_labels: %{"family/home": "Family / Home", else: "Something Else"},
