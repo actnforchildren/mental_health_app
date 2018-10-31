@@ -40,6 +40,10 @@ ul > li, ol > li {
   color: #E0001D;
 }
 
+.afc-bg-red {
+  background-color: #E0001D;
+}
+
 .afc-b--red {
   border-color: #DF001C;
 }
@@ -195,4 +199,10 @@ ul > li, ol > li {
 
 .toolbox-shadow {
   box-shadow: 2px 5px 20px 0 rgba(0,0,0,.1);
+}
+
+.dot {
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
 }

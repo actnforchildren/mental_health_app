@@ -1,18 +1,21 @@
 <div class="flex fixed bottom-0 h3 w-100 tc bg-white bt afc-b--pink z-max">
   <%= link to: page_path(@conn, :show, ""), class: "dib w-25 pointer link pt2 black" do %>
-    <p class="db mv1">Home</p>
+    <img src="<%= static_path(@conn, src_image("diary")) %>" alt="" class="w2 mr2 center">
+    <p class="">Home</p>
   <% end %>
 
   <%= link to: page_path(@conn, :show, "toolbox"), class: "dib w-25 pointer link pt2 black" do %>
-    <p class="db mv1">Toolbox</p>
+    <img src="<%= static_path(@conn, src_image("toolbox")) %>" alt="" class="w2 mr2 center">
+    <p class="">Toolbox</p>
   <% end %>
 
   <%= link to: page_path(@conn, :show, "help"), class: "dib w-25 pointer link pt2 black" do %>
-    <p class="db mv1">Help</p>
+    <p class="mv1">Help</p>
   <% end %>
 
   <%= link to: session_path(@conn, :delete, @current_user), method: "delete", class: "dib w-25 pointer link pt2 black" do %>
-    <p class="db mv1">Log out</p>
+    <img src="<%= static_path(@conn, src_image("logout")) %>" alt="" class="w2 mr2 center">
+    <p class="mv1">Log out</p>
   <% end %>
 
 </div>
