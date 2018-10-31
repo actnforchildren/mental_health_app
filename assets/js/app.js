@@ -40,8 +40,22 @@ if (calendar) {
       });
     });
   }
-
 }
+
+// swipe weekly log
+var weeklyLog = document.getElementById("weekly-log");
+if (weeklyLog) {
+  swipe(weeklyLog, function(dir) {
+    if (dir === "right") {
+      window.location.href = previousWeek
+    }
+
+    if (dir === "left") {
+      window.location.href = nextWeek
+    }
+  });
+}
+
 
 function swipe(el, callback){
   var swipedir;
