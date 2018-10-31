@@ -1,0 +1,31 @@
+<div class="ph4 lh-copy mb6 mw6 center">
+  <%= render "back_btn.html", conn: @conn %>
+  
+  <p class="b tc pt5 pb4 f4">What is change?</p>
+
+  <p class="mv2">
+    Change is when you realise “things are different than they used to be!”.
+  </p>
+
+  <p class="mv2">
+    This can be exciting when you experience new things, like discovering a new
+    band or changing your style.
+  </p>
+
+  <p class="mv2">
+    Sometimes change isn’t much fun. Some things may feel unfamiliar and you
+    have to learn new ways of dealing with them. For example:
+  </p>
+
+  <ul class="ml3 pl2">
+    <li>Leaving primary school and having to make new friends</li>
+    <li>Starting secondary school (where everything seems different)</li>
+    <li>Discovering your body works in new ways – and sometimes not how you expect!</li>
+  </ul>
+
+  <p class="mt3">
+    Because change happens all the time, you might not even notice it. At other
+    times, it can be feel upsetting and unfair. Don’t measure yourself against
+    other people: remember we all react differently.
+  </p>
+</div>

@@ -3,6 +3,19 @@ body {
   font-family: 'Rubik', sans-serif;
 }
 
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ul > li, ol > li {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
 .afc-bg-pink {
   background-color: #F5BABF;
 }

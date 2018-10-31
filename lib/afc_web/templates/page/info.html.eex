@@ -4,13 +4,12 @@
 
 <div class="bg-white center pa3 pt4">
   <div class="w-70-ns center flex mv2 pt5">
-
     <%= link to: info_path(@conn, :show, "what_is_mental_wellbeing"), class: "tc ma2 toolbox-shadow w-50 h4 flex afc-dark-blue" do %>
       <p class="mv3 self-center center ph2 lh-copy">What is Mental Wellbeing?</p>
     <% end %>
 
-    <%= link to: info_path(@conn, :show, "mental_wellbeing_vs_mental_health"), class: "tc ma2 toolbox-shadow w-50 h4 flex afc-dark-blue" do %>
-      <p class="mv3 self-center center ph2 lh-copy">Mental Wellbeing vs Mental Health</p>
+    <%= link to: info_path(@conn, :show, "what_affects_mental_wellbeing"), class: "tc ma2 toolbox-shadow w-50 h4 flex afc-dark-blue" do %>
+      <p class="mv3 self-center center ph2 lh-copy">What affects mental wellbeing?</p>
     <% end %>
   </div>
 
@@ -19,8 +18,8 @@
       <p class="mv3 self-center center ph2 lh-copy">What is change?</p>
     <% end %>
 
-    <%= link to: info_path(@conn, :show, "the_impact_of_change"), class: "tc ma2 toolbox-shadow w-50 h4 flex afc-dark-blue" do %>
-      <p class="mv3 self-center center ph2 lh-copy">The Impact of Change</p>
+    <%= link to: info_path(@conn, :show, "coping_with_change"), class: "tc ma2 toolbox-shadow w-50 h4 flex afc-dark-blue" do %>
+      <p class="mv3 self-center center ph2 lh-copy">Coping with change</p>
     <% end %>
   </div>
 </div>
