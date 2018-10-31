@@ -1,6 +1,4 @@
 <div class="flex justify-between fixed top-0 h-day-week-month w-100 tc bg-white z-max">
-  <!-- the border classes on this elem will need to be added depending on -->
-  <!-- the page the user is on. Leaving in for now so we remember the classes -->
   <%= if @conn.request_path == "/"  || @conn.request_path == "/log"  do %>
     <a class="flex db pointer link black f4 w-33 bb bw2" href="/">
   <% else %>
@@ -13,11 +11,15 @@
     <a class="flex db pointer link black f4 w-33 bb bw2" href="/weekly-log">
   <% else %>
     <a class="flex db pointer link black f4 w-33" href="/weekly-log">
-<% end %>
+  <% end %>
     <p class="w-100 self-center">Weekly</p>
   </a>
 
-  <a class="flex db pointer link black f4 w-33" href="/">
+  <%= if @conn.request_path == "/monthly-log" do %>
+    <a class="flex db pointer link black f4 w-33 bb bw2" href="/monthly-log">
+  <% else %>
+    <a class="flex db pointer link black f4 w-33" href="/monthly-log">
+  <% end %>
     <p class="w-100 self-center">Monthly</p>
   </a>
 </div>

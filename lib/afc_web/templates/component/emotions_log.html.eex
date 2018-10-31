@@ -1,0 +1,13 @@
+<%= for [emotion, count] <- @logs do %>
+<div class="pa3 flex items-center justify-center">
+  <div class="w-15 v-mid">
+    <%= emoji_img_tag(static_path(@conn, src_image(emotion)), [class: "db center w4-l w3"]) %>
+    <span class="f5 center"><%= emotion %></span>
+  </div>
+  <%= if count > 1 do %>
+  <span class="w-25-l w-70 pl3 v-mid b f5 f3-l"><%= count %> times in <%= @total_days %> days </span>
+  <% else %>
+  <span class="w-25-l w-70 pl3 v-mid b f5 f3-l"><%= count %> time in <%= @total_days %> days </span>
+  <% end %>
+</div>
+<% end %>
