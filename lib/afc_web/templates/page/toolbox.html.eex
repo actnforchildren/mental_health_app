@@ -17,4 +17,12 @@
     <%= component "toolbox_anger", conn: @conn, id: "title-anger" %>
     <%= component "toolbox_worry", conn: @conn, id: "title-worry" %>
   </div>
+
+  <div class="mw7 center tc mt5">
+    <%= component "container", class: "rotate-180 mb4" %>
+    <p class="mb4 b afc-red f3">Speak to someone</p>
+    <p class="mv2">Talk to your trusted adult</p>
+    <p class="mb4">about how you're feeling</p>
+    <%= component "container", class: "mt2" %>
+  </div>
 </div>
