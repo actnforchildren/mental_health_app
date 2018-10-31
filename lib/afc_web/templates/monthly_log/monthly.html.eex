@@ -1,19 +1,21 @@
 <%= component "day_week_month_bar", conn: @conn %>
-
-<div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month" id="monthly-log">
-  <div class="w-100 tc f4 mb3">
-    <a class="h2 bg-white bn dib w-20 tl pointer tl no-underline black" href="<%= @previous_month %>"><</a>
-    <span class="w-60"> <%= @date_title %> </span>
-    <a class="h2 bg-white bn dib w-20 tl pointer tr no-underline black" href="<%= @next_month %>">></a>
-  </div>
-  <div class="center w-100 tc f4">
-    <%= if Enum.empty?(@logs) do %>
-      <p>No emotions logged for this month</p>
-    <% else %>
-      <%= component "emotions_log", conn: @conn, logs: @logs, total_days: @total_days %>
-    <% end %>
+<div class="pv3">
+  <div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month" id="monthly-log">
+    <div class="w-100 tc f4 mb3">
+      <a class="h2 bg-white bn dib w-20 tl pointer tl no-underline black" href="<%= @previous_month %>"><</a>
+      <span class="w-60"> <%= @date_title %> </span>
+      <a class="h2 bg-white bn dib w-20 tl pointer tr no-underline black" href="<%= @next_month %>">></a>
+    </div>
+    <div class="center w-100 tc f4">
+      <%= if Enum.empty?(@logs) do %>
+        <p>No emotions logged for this month</p>
+      <% else %>
+        <%= component "emotions_log", conn: @conn, logs: @logs, total_days: @total_days %>
+      <% end %>
+    </div>
   </div>
 </div>
+
 
 <script type="text/javascript">
   var nextMonth = "<%= raw @next_month %>"
