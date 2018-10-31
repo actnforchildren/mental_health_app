@@ -1,28 +1,25 @@
-<div class="mt5 f4 mb5">
-  <p class="b tc f4 mb3" id="<%= @id %>">Sadness</p>
+<p class="b tc f4 mb3" id="<%= @id %>">Sadness</p>
 
-  <div class="toolbox-shadow">
-    <%= component "toolbox_label", conn: @conn, text: "Watch this clip", dropdown: [
-      {"1", "Find somewhere comfortable to sit or lie down"}
-    ] %>
+<div class="toolbox-shadow">
+  <%= component "toolbox_label", conn: @conn, text: "Watch this clip", dropdown: [
+    {"1", "Find somewhere comfortable to sit or lie down"}
+  ] %>
 
-    <%= component "toolbox_label", conn: @conn, text: "Breathe deeply", dropdown: [
-      {"1", "Find somewhere comfortable to sit or lie down."},
-      {"2", "Put one hand on your tummy, and take a deep breath in through your nose."},
-      {"3", "As you breathe in, let your tummy push your hand out."},
-      {"4", "Hold the breath for 3 seconds, then slowly breathe out of your mouth."},
-      {"5", "Feel your tummy move back in, as you breathe out."},
-      {"6", "Repeat another 2 times."}
-    ] %>
+  <%= component "toolbox_label", conn: @conn, text: "Breathe deeply", dropdown: [
+    {"1", "Find somewhere comfortable to sit or lie down."},
+    {"2", "Put one hand on your tummy, and take a deep breath in through your nose."},
+    {"3", "As you breathe in, let your tummy push your hand out."},
+    {"4", "Hold the breath for 3 seconds, then slowly breathe out of your mouth."},
+    {"5", "Feel your tummy move back in, as you breathe out."},
+    {"6", "Repeat another 2 times."}
+  ] %>
 
-    <%= component "toolbox_label", conn: @conn, text: "Play a game", dropdown: [
-      {"1", "Find somewhere comfortable to sit or lie down"}
-    ] %>
+  <%= component "toolbox_label", conn: @conn, text: "Play a game", dropdown: [
+    {"1", "Find somewhere comfortable to sit or lie down"}
+  ] %>
 
-    <%= component "toolbox_label", conn: @conn, text: "Speak to someone", dropdown: [
-      {"1", "Find somewhere comfortable to sit or lie down"}
-    ] %>
-
-  </div>
+  <%= component "toolbox_label", conn: @conn, text: "Speak to someone", dropdown: [
+    {"1", "Find somewhere comfortable to sit or lie down"}
+  ] %>
 
 </div>
