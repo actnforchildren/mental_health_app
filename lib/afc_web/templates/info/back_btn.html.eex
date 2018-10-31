@@ -1,0 +1,6 @@
+<%= link to: page_path(@conn, :show, "info"), class: "w4 mt4 db ba link black br2 pv2" do %>
+  <div class="flex justify-center mr2">
+    <img src="<%= static_path(@conn, src_image("left_arrow")) %>" alt="" class="h1 w1 mr3 self-center">
+    <p class="b dib">Back</p>
+  </div>
+<% end %>
