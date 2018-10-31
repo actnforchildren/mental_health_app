@@ -20,6 +20,7 @@ defmodule Afc.Email do
     """
     <strong>#{emotion_log.emotion}</strong>
     <p>#{logged_at}</p>
+    <p>username: #{emotion_log.user.username}</p>
     <p>reason list:</p>
     #{list_reasons(emotion)}
     <p>reason text:</p>
