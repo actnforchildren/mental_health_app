@@ -20,6 +20,18 @@ defmodule Afc.Emotion do
     List.last(Repo.all(query))
   end
 
+  def get_emotion_report(user, from, to) do
+    from_date = from |> Timex.to_naive_datetime()
+    to_date = to |> Timex.to_naive_datetime()
+    query =
+      from e in EmotionLog,
+      where: e.user_id == ^user.id
+      and e.inserted_at >= ^from_date
+      and e.inserted_at <= ^to_date
+
+    Repo.all(query)
+  end
+
   def get_emotion_module_name(emotion) do
     emotion_str =
       emotion
