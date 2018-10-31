@@ -1,11 +1,26 @@
-<div class="box">
-  <div class="afc-bg-dark-blue">
-    <p class="b white tc pt5 pb4 f4">Helpful Advice and Information</p>
+<div class="afc-bg-dark-blue pv3">
+  <p class="b white tc pt5 pb4 f4">Helpful Advice and Information</p>
+</div>
+
+<div class="bg-white center pa3 pt4">
+  <div class="w-70-ns center flex mv2 pt5">
+
+    <%= link to: info_path(@conn, :show, "what_is_mental_wellbeing"), class: "tc ma2 toolbox-shadow w-50 h4 flex afc-dark-blue" do %>
+      <p class="mv3 self-center center ph2 lh-copy">What is Mental Wellbeing?</p>
+    <% end %>
+
+    <%= link to: info_path(@conn, :show, "mental_wellbeing_vs_mental_health"), class: "tc ma2 toolbox-shadow w-50 h4 flex afc-dark-blue" do %>
+      <p class="mv3 self-center center ph2 lh-copy">Mental Wellbeing vs Mental Health</p>
+    <% end %>
   </div>
 
-  <div class="bg-white center pa3 pt4">
-    <div class="w-70-ns center">
-      <p class="pl2 pb2 lh-title mb3">Find coping strategies that work best for what you’re feeling.</p>
-    </div>
+  <div class="w-70-ns center flex mv2">
+    <%= link to: info_path(@conn, :show, "what_is_change"), class: "tc ma2 toolbox-shadow w-50 h4 flex afc-dark-blue" do %>
+      <p class="mv3 self-center center ph2 lh-copy">What is change?</p>
+    <% end %>
+
+    <%= link to: info_path(@conn, :show, "the_impact_of_change"), class: "tc ma2 toolbox-shadow w-50 h4 flex afc-dark-blue" do %>
+      <p class="mv3 self-center center ph2 lh-copy">The Impact of Change</p>
+    <% end %>
   </div>
 </div>
