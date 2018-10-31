@@ -1,0 +1,34 @@
+<%= component "day_week_month_bar", conn: @conn %>
+
+<div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month" id="weekly-log">
+  <div class="w-100 tc f4 mb3">
+    <a class="h2 bg-white bn dib w-20 tl pointer tl no-underline black" href="<%= @previous_week %>"><</a>
+    <span class="w-60"> <%= @date_title %> </span>
+    <a class="h2 bg-white bn dib w-20 tl pointer tr no-underline black" href="<%= @next_week %>">></a>
+  </div>
+  <div class="center w-100 tc f4">
+
+    <%= if Enum.empty?(@logs) do %>
+      <p>No emotions logged for this week</p>
+    <% else %>
+      <%= for [emotion, count] <- @logs do %>
+      <div class="pa3 flex items-center justify-center">
+        <div class="w-15 v-mid">
+          <%= emoji_img_tag(static_path(@conn, src_image(emotion)), [class: "db center w4-l w3"]) %>
+          <span class="f5 center"><%= emotion %></span>
+        </div>
+        <%= if count > 1 do %>
+        <span class="w-25-l w-70 pl3 v-mid b f5 f3-l"><%= count %> times in 7 days </span>
+        <% else %>
+        <span class="w-25-l w-70 pl3 v-mid b f5 f3-l"><%= count %> time in 7 days </span>
+        <% end %>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var nextWeek = "<%= raw @next_week %>"
+  var previousWeek = "<%= raw @previous_week %>"
+</script>
