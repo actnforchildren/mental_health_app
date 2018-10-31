@@ -11,7 +11,7 @@
     <%= component "toolbox_link", conn: @conn, image: "sad", link_text: "Sadness", link: "#title-sadness" %>
     <%= component "toolbox_link", conn: @conn, image: "angry", link_text: "Anger", link: "#title-anger" %>
     <%= component "toolbox_link", conn: @conn, image: "worried", link_text: "Worry", link: "#title-worry" %>
-    <%= component "toolbox_link", conn: @conn, image: "info", link_text: "More Info...", link: "/" %>
+    <%= component "toolbox_link", conn: @conn, image: "info", link_text: "More Info...", link: "/info" %>
 
     <%= component "toolbox_sadness", conn: @conn, id: "title-sadness" %>
     <%= component "toolbox_anger", conn: @conn, id: "title-anger" %>
