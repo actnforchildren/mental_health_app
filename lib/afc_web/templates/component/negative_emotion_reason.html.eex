@@ -9,14 +9,14 @@
   </button>
   <%= component "container", class: "mt2" %>
 
-  <div class="absolute bg-white w-100 h-100 top-0 left-0 tl dn pa3" id="toolbox-modal">
+  <div class="absolute bg-white w-100 top-0 left-0 tl dn pa3" id="toolbox-modal">
     <div class="pr3 tr">
       <button type="button" class="ph3 pv2 br2 mt3 b afc-b--red ba bg-white afc-red" id="toolbox-close-btn">
         <span class="normal mr3">X</span>
         Exit
       </button>
     </div>
-    <div class="mb5"><%= component(pick_toolbox(@emotion), conn: @conn, id: "title-sadness") %></div>
+    <div class="mb6 mt5 f4"><%= component(pick_toolbox(@emotion), conn: @conn, id: "title-sadness") %></div>
   </div>
 
 </div>
