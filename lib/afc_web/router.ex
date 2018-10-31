@@ -28,6 +28,7 @@ defmodule AfcWeb.Router do
     resources "/info", InfoController, only: [:show]
     get "/log", LogController, :index
     get "/weekly-log", WeeklyLogController, :index
+    get "/monthly-log", MonthlyLogController, :index
     resources "/share", ShareController, only: [:create]
     resources "/", PageController, only: [:index, :show]
   end

@@ -56,6 +56,19 @@ if (weeklyLog) {
   });
 }
 
+// swipe monthly log
+var monthlyLog = document.getElementById("monthly-log");
+if (monthlyLog) {
+  swipe(monthlyLog, function(dir) {
+    if (dir === "right") {
+      window.location.href = previousMonth
+    }
+
+    if (dir === "left") {
+      window.location.href = nextMonth
+    }
+  });
+}
 
 function swipe(el, callback){
   var swipedir;

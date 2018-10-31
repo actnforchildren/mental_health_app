@@ -22,8 +22,8 @@ defmodule Afc.Emotion do
 
 # e.g [[:happy, 2], [:excited, 1]]
   def get_emotion_report(user, from, to) do
-    from_date = from |> Timex.to_naive_datetime()
-    to_date = to |> Timex.to_naive_datetime()
+    from_date = Timex.to_naive_datetime(from)
+    to_date = Timex.to_naive_datetime(to)
     query =
       from e in EmotionLog,
       select: [e.emotion, count(e.id)],
