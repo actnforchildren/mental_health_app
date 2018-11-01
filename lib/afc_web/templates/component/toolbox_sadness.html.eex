@@ -1,25 +1,46 @@
 <p class="b tc f4 mb3 mt5" id="<%= @id %>">Sadness</p>
 
 <div class="toolbox-shadow">
-  <%= component "toolbox_label", conn: @conn, text: "Watch this clip", dropdown: [
-    {"1", "Find somewhere comfortable to sit or lie down"}
+  <%= component "toolbox_label", conn: @conn, text: "Think positive thoughts", dropdown: [
+    {"", "Sometimes we think mean thoughts about ourselves.  For example, \"I'm so clumsy, I ruin everything\" or \"I'm not clever – I'll never pass that test\"."},
+    {"", "Thoughts like these drag you down, but there's a way to zap them:"},
+    {"1", "First think of your best feature, or a feature you'd like to have. You might be confident, kind, sporty, friendly, creative, determined, or something completely different."},
+    {"2", "Next write a positive sentence about your best feature. For example, \"I am calm and confident\", \"I am proud of the things I've done\" or \"I am a good person and I like myself!\""},
+    {"", "Whenever you catch yourself thinking a mean thought, turn it around by saying your positive sentence. If you like, write your positive thought on a card and keep it where you can see it every day."}
   ] %>
 
-  <%= component "toolbox_label", conn: @conn, text: "Breathe deeply", dropdown: [
-    {"1", "Find somewhere comfortable to sit or lie down."},
-    {"2", "Put one hand on your tummy, and take a deep breath in through your nose."},
-    {"3", "As you breathe in, let your tummy push your hand out."},
-    {"4", "Hold the breath for 3 seconds, then slowly breathe out of your mouth."},
-    {"5", "Feel your tummy move back in, as you breathe out."},
-    {"6", "Repeat another 2 times."}
+  <%= component "toolbox_label", conn: @conn, text: "Make a plan", dropdown: [
+    {"", "Knowing how you'll deal with tough situations can help make them less stressful. Use this list to make an action plan:"},
+    {"1", "Think about the week ahead. What coming events or situations might make you feel bad?"},
+    {"2", "Think of 3 things to try if you feel upset. Remember ACE: activities which give you a sense of <b>A</b>chievement, whereby you feel <b>C</b>lose to other people, and making sure you do things you <b>E</b>njoy."},
+    {"3", "During the week, use your action plan to cope with the stressful situation or feeling."},
+    {"4", "Review your plan at the end of the week. Which actions did you try? Which ones helped?"},
+    {"", "If you find an action that works, remember to include it in next week's plan!"}
   ] %>
 
-  <%= component "toolbox_label", conn: @conn, text: "Play a game", dropdown: [
-    {"1", "Find somewhere comfortable to sit or lie down"}
+  <%= component "toolbox_label", conn: @conn, text: "Colour breathing", dropdown: [
+    {"", "You can use this exercise to relax and let go of uncomfortable feelings. Start by sitting or lying somewhere comfortable."},
+    {"1", "Choose a colour that makes you feel good – perhaps a warm, sunny yellow or calm sea blue."},
+    {"2", "Now pick a colour that reminds you of the uncomfortable feelings you want to get rid of. You could choose a rainy grey or angry red for this"},
+    {"3", "Close your eyes and breathe in slowly through your nose. Imagine you're breathing in your good colour. Feel it move through your chest and belly. As the colour spreads, it relaxes every bit of you."},
+    {"4", "Breathe out softly through your mouth. Imagine you're blowing out the uncomfortable colour and feelings."},
+    {"5", "Keep breathing in and out. Feel the good colour filling you up from your toes to the top of your head. Let the angry colours melt away."},
+    {"6", "When you're ready, open your eyes and notice what you see and hear all around you."}
   ] %>
 
-  <%= component "toolbox_label", conn: @conn, text: "Speak to someone", dropdown: [
-    {"1", "Find somewhere comfortable to sit or lie down"}
+  <%= component "toolbox_label", conn: @conn, text: "Become a detective", dropdown: [
+    {"", "Negative thoughts make us believe we're useless, or a failure, or that someone doesn't like us. Sometimes these thoughts happen so quickly that we don't stop to ask if they're really true. "},
+    {"", "The next time you notice a negative thought, pretend you're a detective and use these steps to find the evidence:"},
+    {"1", "What proof is there that your negative thought is <b>true</b>?"},
+    {"2", "What evidence shows you the negative thought is <b>false</b>?"},
+    {"3", "Can you be 100% sure that the negative thought is true? If not, why not?"},
+    {"4", "If you're absolutely sure the negative thought is true, make a list of good things about yourself or the situation so you can see the <b>whole picture</b>."}
+  ] %>
+
+  <%= component "toolbox_label", conn: @conn, text: "Be your own bestie", dropdown: [
+    {"", "For a few days, imagine you're a friend who needs looking after. Find ways to encourage yourself, just like you would support your best friend."},
+    {"", "Give yourself a thumbs up or a cheer every time you try your best – even if it's not perfect."},
+    {"", "It's easy to always look for your own faults. Sometimes just being a friend to yourself can take the pressure off."}
   ] %>
 
 </div>
