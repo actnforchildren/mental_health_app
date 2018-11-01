@@ -1,8 +1,8 @@
 <div class="tc" id="<%= "toolbox_" <> @emotion %>">
   <%= component "container", class: "rotate-180 mb4" %>
-  <p class="mv2">If you're still feeling very emotional,</p>
-  <p class="mv2">practice a coping strategy to feel</p>
-  <p class="mv2">better.</p>
+
+  <p class="mv2">If you'd like to try a coping strategy to help you feel better,</p>
+  <p class="mv2">you can use the Toolbox</p>
   <button type="button" class="afc-bg-pink ph3 pv2 br2 mt3 b bn flex items-center center" id="toolbox-open-btn">
     <img src="<%= static_path(@conn, src_image("toolbox")) %>" alt="" class="w2 mr2">
     <p class="">Toolbox</p>
