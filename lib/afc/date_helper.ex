@@ -4,6 +4,7 @@ defmodule Afc.DateHelper do
       {:ok, from_date} ->
         case Timex.parse(to, "%d-%m-%Y", :strftime) do
           {:ok, to_date} ->
+            to_date = Timex.end_of_day(to_date)
             %{from: from_date, to: to_date}
 
           _ -> nil
