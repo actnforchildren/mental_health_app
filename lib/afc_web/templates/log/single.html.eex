@@ -8,7 +8,11 @@
       <%= emoji_img_tag(static_path(@conn, src_image(@emotion_log.emotion))) %>
       <div class="center tl flex mv3">
         <p class="w-40 pl3 pl6-l">I felt:</p>
-        <p class="w-60"><%= format_emotion(@emotion_log.emotion) %></p>
+        <%= if @emotion_log.emotion == :else do %>
+          <p class="w-60"><%= @emotion.feeling %></p>
+        <% else %>
+          <p class="w-60"><%= format_emotion(@emotion_log.emotion) %></p>
+        <% end %>
       </div>
 
       <div class="center tl flex">

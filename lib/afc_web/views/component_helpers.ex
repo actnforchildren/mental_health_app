@@ -34,4 +34,14 @@ defmodule AfcWeb.ComponentHelpers do
       "worried" -> "toolbox_worry"
     end
   end
+
+  def format_emotion_name(emotion) do
+    case emotion do
+      :else -> "Something else"
+      :unsure -> "I don't know"
+      _ ->  emotion
+            |> Atom.to_string()
+            |> String.capitalize()
+    end
+  end
 end
