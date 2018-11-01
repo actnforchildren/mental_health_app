@@ -1,0 +1,35 @@
+<div class="ph4 lh-copy mb6 mw6 center">
+  <%= render "back_btn.html", conn: @conn %>
+  
+  <p class="b tc pt5 pb4 f4">Coping with change</p>
+
+  <p class="mv2">
+    Change can be good or bad (sometimes at the same time!). Going through
+    change shows you new ways of looking at the world, and teaches you to cope
+    with challenges.
+  </p>
+
+  <p class="mv2">
+    Change can also leave you feeling scared, sad or alone – and it can take
+    time to adjust.
+  </p>
+
+  <p class="mv2">
+    Here are two techniques to try when you’re anxious about a new situation,
+    such as starting a new school:
+  </p>
+
+  <ol class="ml3 pl2">
+    <li>
+      Make a list of things to do when anxiety strikes. For example, your list
+      might include ‘taking deep breaths’, ‘telling someone you trust how you
+      feel’, or ‘try to remember all the words of my favourite song’.
+    </li>
+    <li>
+      Turn the stressful event into a series of tiny steps, then just
+      concentrate on taking one step at a time. For instance, if you’re feeling
+      stressed about how much work you have to do today, start with ‘I’ll just
+      read this chapter’ or ‘I only have to put my football kit in my bag’.
+    </li>
+  </ol>
+</div>

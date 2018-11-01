@@ -1,0 +1,28 @@
+<div class="ph4 lh-copy mb6 mw6 center">
+  <%= render "back_btn.html", conn: @conn %>
+  
+  <p class="b tc pt5 pb4 f4">What affects mental wellbeing?</p>
+
+  <p class="mv2">
+    Lots of things can chip away at our mental wellbeing until we feel quite low
+    or even ill. Here are 3 things that many people struggle with:
+  </p>
+
+  <ol class="ml3 ph2">
+    <li>
+      When you’re faced with a situation that went badly last time, your brain
+      might think it will go badly again – so you end up feeling bad! Remind
+      yourself that each experience is brand new: you never know how it will end.
+    </li>
+    <li>
+      Stress can make you feel like hiding away, or eating or sleeping very
+      differently than usual. It’s OK to be alone, but try to spend time with
+      others too, as this will lift your mood faster.
+    </li>
+    <li>
+      If you look for the negative in a person or situation, that’s how you’ll
+      feel about them. Try to look for the good as well as the bad each time.
+    </li>
+  </ol>
+
+</div>

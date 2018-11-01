@@ -1,29 +1,31 @@
 <%= component "day_week_month_bar", conn: @conn %>
 
-<div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month">
-  <p id="elm-calendar" class="pa3 ba br2 dib mb4"></p>
-  <p class="tc f3 mb3"><%= @date_title %></p>
-  <div class="center w-100 tc f4">
-    <%= emoji_img_tag(static_path(@conn, src_image(@emotion_log.emotion))) %>
-    <div class="center tl flex mv3">
-      <p class="w-40 pl3 pl6-l">I felt:</p>
-      <p class="w-60"><%= format_emotion(@emotion_log.emotion) %></p>
-    </div>
+<div class="pv3">
+  <div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month">
+    <p id="elm-calendar" class="pa3 ba br2 dib mb4"></p>
+    <p class="tc f3 mb3"><%= @date_title %></p>
+    <div class="center w-100 tc f4">
+      <%= emoji_img_tag(static_path(@conn, src_image(@emotion_log.emotion))) %>
+      <div class="center tl flex mv3">
+        <p class="w-40 pl3 pl6-l">I felt:</p>
+        <p class="w-60"><%= format_emotion(@emotion_log.emotion) %></p>
+      </div>
 
-    <div class="center tl flex">
-      <p class="w-40 pl3 pl6-l">Because:</p>
-      <p class="w-60"><%= @emotion.reason %></p>
-    </div>
+      <div class="center tl flex">
+        <p class="w-40 pl3 pl6-l">Because:</p>
+        <p class="w-60"><%= @emotion.reason %></p>
+      </div>
 
+    </div>
+    <%= if not @emotion_log.shared do %>
+      <%= component "trusted_share_btn", [conn: @conn, emotion_log: @emotion_log, date: @date] %>
+    <% else %>
+    <div class="tl pt3 pl3 pl6-l">
+      <img class="w2 v-mid" src="<%= static_path(@conn, "/images/success-icon.png") %> " alt="success">
+      <span>Shared with trusted adult</span>
+    </span>
+    <% end %>
   </div>
-  <%= if not @emotion_log.shared do %>
-    <%= component "trusted_share_btn", [conn: @conn, emotion_log: @emotion_log, date: @date] %>
-  <% else %>
-  <div class="tl pt3 pl3 pl6-l">
-    <img class="w2 v-mid" src="<%= static_path(@conn, "/images/success-icon.png") %> " alt="success">
-    <span>Shared with trusted adult</span>
-  </div>
-  <% end %>
 </div>
 
 <script type="text/javascript">

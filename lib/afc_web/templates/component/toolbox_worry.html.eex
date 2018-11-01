@@ -1,4 +1,4 @@
-<p class="b tc f4 mb3" id="<%= @id %>">Worry</p>
+<p class="b tc f4 mb3 mt5" id="<%= @id %>">Worry</p>
 
 <div class="toolbox-shadow">
   <%= component "toolbox_label", conn: @conn, text: "Play a game", dropdown: [] %>

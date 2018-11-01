@@ -15,7 +15,7 @@ defmodule AfcWeb.PageController do
   end
 
   def show(conn, %{"id" => page}) do
-    static_pages = ~w(toolbox help)
+    static_pages = ~w(toolbox help info)
     case Enum.any?(static_pages, &(&1 == page)) do
       true ->
         render conn, "#{page}.html"

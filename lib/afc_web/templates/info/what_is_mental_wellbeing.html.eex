@@ -1,0 +1,32 @@
+<div class="ph4 lh-copy mb6 mw6 center">
+  <%= render "back_btn.html", conn: @conn %>
+  
+  <p class="b tc pt5 pb4 f4">What is mental wellbeing?</p>
+
+  <p class="mv2">
+    ‘Mental wellbeing’ describes how you feel about yourself and the things that
+    happen to you.
+  </p>
+
+  <p class="mv2">
+    Good mental wellbeing doesn’t mean being happy all the time. It just means
+    you can accept yourself and your feelings, even when things aren’t perfect.
+    Good mental wellbeing won’t stop problems from happening, but you’ll feel
+    more able to handle what life throws at you.
+  </p>
+
+  <p class="b tc mt4 mb3 ">Looking after your mental wellbeing</p>
+
+  <p class="mv2">
+    Like getting fit, good mental wellbeing is something you have to practise!
+    Try to pick one thing from this list every day:
+  </p>
+
+  <ol class="ml3 ph2">
+    <li>Do something to say or show how you feel, like keeping a diary or chatting with mates.</li>
+    <li>Enjoy a favourite hobby or learn something new.</li>
+    <li>Be active. Walk, dance, move about or play a sport for as long as you like.</li>
+    <li>Spend time with other people (or pets).</li>
+    <li>Do something nice for someone else – even a smile or saying “thank you” counts.</li>
+  </ol>
+</div>

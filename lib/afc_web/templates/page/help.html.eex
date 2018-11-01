@@ -1,4 +1,4 @@
-<div class="mb5">
+<div class="mb5 pv3">
   <%= component "container", class: "rotate-180 mb3" %>
   <div class="mw5 center">
     <img src="<%= static_path(@conn, src_image("siren")) %>" alt="" class="w3 db center mb3">

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
   </head>
 
-  <body class="pv3 <%= background_colour_picker(@conn) %>">
+  <body class="<%= background_colour_picker(@conn) %>">
 
     <%= if @current_user do %>
       <%= component "navbar", [conn: @conn, current_user: @current_user] %>
