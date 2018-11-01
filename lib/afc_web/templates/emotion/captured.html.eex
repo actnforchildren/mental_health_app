@@ -1,7 +1,7 @@
 <div class="w-90 bg-white center br2 pa3 mb5">
   <p class="tc b f4 mv4">Well done</p>
   <p class="tc mb3">Today's log has been completed.</p>
-  <p class="tc mb5">Do you want to share it with someone?</p>
+  <p class="tc mb5">Do you want to send it to your trusted adult?</p>
   <%= form_for @conn, "/share", fn f -> %>
   <input type="hidden" name="emotion_log_id" value="<%= @log_id %>">
   <input type="hidden" name="date" value="<%= @date %>">
