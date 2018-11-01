@@ -1,8 +1,38 @@
 <p class="b tc f4 mb3 mt5" id="<%= @id %>">Anger</p>
 
 <div class="toolbox-shadow">
-  <%= component "toolbox_label", conn: @conn, text: "Breathe deeply", dropdown: [] %>
-  <%= component "toolbox_label", conn: @conn, text: "Run your wrists under cold water", dropdown: [] %>
-  <%= component "toolbox_label", conn: @conn, text: "Punch something soft like a pillow", dropdown: [] %>
-  <%= component "toolbox_label", conn: @conn, text: "Speak to someone", dropdown: [] %>
+  <%= component "toolbox_label", conn: @conn, text: "Spot your warning signals", dropdown: [
+    {"", "Being angry can mean anything from mild irritation to total rage! It's OK to feel angry – but when you're at your angriest, it can be difficult to calm your thoughts or to listen when others give you good advice."},
+    {"", "Think about times you've been angry and see if you can spot these signs:"},
+    {"1", "What happens to your breathing? Do you start to breathe faster or hold your breath?"},
+    {"2", "What happens to your body? For instance, you might get very hot or a bit shaky."},
+    {"3", "Do you act or think differently when you're angry? You might notice you move very quickly, or have negative thoughts."},
+    {"", "Learning to spot your 'angry signs' gives you a chance to let off steam. This is really useful because it means you can be angry, but still stay in control of your actions."}
+  ] %>
+  <%= component "toolbox_label", conn: @conn, text: "Controlled Breathing", dropdown: [
+    {"", "When you get angry, you often find you start breathing faster – but this can make you feel more angry or tense!"},
+    {"", "Follow these steps to calm your breath, mind and body. As you do the exercise, try to imagine you're somewhere you'd usually feel relaxed or safe."},
+    {"1", "Breathe in slowly while you count in your head: \"1, 2, 3, 4, 5\"."},
+    {"2", "Hold your breath for a few seconds."},
+    {"3", "Breathe out slowly, again counting to 5."},
+    {"4", "Keep breathing like this until you feel calmer."}
+  ] %>
+
+  <%= component "toolbox_label", conn: @conn, text: "Burn off that energy", dropdown: [
+    {"", "When you feel angry you might notice you have a lot more energy than usual. Doing something physically tiring helps burn off this energy – so it's a great way to respond to anger. "},
+    {"", "Try one of these suggestions to release energy and feel calmer:"},
+    {"1", "Move around! Could you go for a run? Or even run on the spot? A fast walk will also help."},
+    {"2", "Tightly scrunch your toes for a few seconds then release and relax them. Gradually work your way up your body tensing and then relaxing your thighs, bottom, stomach, arms, hands, shoulders, neck and face."},
+    {"3", "Talk to a friend or family member about different physical activities you could try to release your energy when you are feeling angry."}
+  ] %>
+
+  <%= component "toolbox_label", conn: @conn, text: "Write how you feel", dropdown: [
+    {"", "Showing or saying how you feel can help you feel better. Writing in a diary or notebook is one way to do this."},
+    {"", "Try writing or drawing:"},
+    {"1", "How you feel"},
+    {"2", "What happened to make you feel like this"},
+    {"3", "What do you wish could be different?"},
+    {"4", "Anything else that's on your mind."},
+    {"", "Whatever you're feeling, it's OK to write it down and let it out!"}
+  ] %>
 </div>
