@@ -22,7 +22,7 @@
   <div class="tl pt3 pl3 pl6-l">
     <img class="w2 v-mid" src="<%= static_path(@conn, "/images/success-icon.png") %> " alt="success">
     <span>Shared with trusted adult</span>
-  </span>
+  </div>
   <% end %>
 </div>
 

@@ -7,13 +7,21 @@
     <a class="h2 bg-white bn dib w-20 tl pointer tr no-underline black" href="<%= @next_week %>">></a>
   </div>
   <div class="center w-100 tc f4">
-
     <%= if Enum.empty?(@logs) do %>
       <p>No emotions logged for this week</p>
     <% else %>
       <%= component "emotions_log", conn: @conn, logs: @logs, total_days: 7 %>
+      <%= if @shared == "true" do %>
+        <div class="tl pt3 pl3 pl6-l">
+          <img class="w2 v-mid" src="<%= static_path(@conn, "/images/success-icon.png") %> " alt="success">
+          <span>Shared with trusted adult</span>
+        </div>
+      <% else %>
+        <%= component "share_report_btn", [conn: @conn, from: @from, to: @to] %>
+      <% end %>
     <% end %>
   </div>
+
 </div>
 
 <script type="text/javascript">

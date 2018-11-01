@@ -3,6 +3,7 @@ defmodule AfcWeb.WeeklyLogController do
   alias Afc.{Emotion, Repo, DateHelper}
 
   def index(conn, params) do
+    shared = params["shared"]
     {from, to} = DateHelper.get_week_dates(params["from"], params["to"])
     case DateHelper.parseDates(from, to) do
       %{from: from_date, to: to_date} ->
@@ -22,7 +23,10 @@ defmodule AfcWeb.WeeklyLogController do
           logs: logs,
           date_title: "#{date_title_from} - #{date_title_to}",
           next_week: next_week,
-          previous_week: previous_week
+          previous_week: previous_week,
+          from: from,
+          to: to,
+          shared: shared
       _ ->
         render conn, "error.html"
     end
