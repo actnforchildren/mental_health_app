@@ -1,9 +1,49 @@
 <p class="b tc f4 mb3 mt5" id="<%= @id %>">Worry</p>
 
 <div class="toolbox-shadow">
-  <%= component "toolbox_label", conn: @conn, text: "Play a game", dropdown: [] %>
-  <%= component "toolbox_label", conn: @conn, text: "Run your wrists under cold water", dropdown: [] %>
-  <%= component "toolbox_label", conn: @conn, text: "Speak to someone", dropdown: [] %>
-  <%= component "toolbox_label", conn: @conn, text: "Breathe deeply", dropdown: [] %>
-  <%= component "toolbox_label", conn: @conn, text: "Listen to your favourite relaxing music", dropdown: [] %>
+  <%= component "toolbox_label", conn: @conn, text: "Play a distraction game", dropdown: [
+    {"", "Being 'distracted' means forgetting about something for a bit. This can be useful when you can't stop having an upsetting thought."},
+    {"", "When you feel worried, try one of these games to take your mind off things:"},
+    {"1", "Count backwards from 50, but take away 4 each time. Start with \"50 …. 46 … 42 … 38\" and keep going."},
+    {"2", "Think of a TV show you watch. Get a piece of paper and write down as many characters from the show as you can remember. Try to keep going until you've listed them all."},
+    {"3", "Pick a letter of the alphabet and write 25 words that start with that letter. So if you pick the letter D, find 25 words that start with a 'D' – like <b>d</b>og, <b>d</b>ish, and <b>d</b>ancer."},
+    {"", "You can make these more challenging by setting a timer. Give yourself 2 minutes to finish the game – then try to beat your score."}
+  ] %>
+  <%= component "toolbox_label", conn: @conn, text: "Try being mindful", dropdown: [
+    {"", "When you're being 'mindful', you really pay attention to something. You can try this anywhere, whether you're walking, listening to music or tidying your room – just follow the steps below."},
+    {"1", "Remind yourself what you're doing. For example, \"I'm walking to school\" or \"I'm at the bus stop\"."},
+    {"2", "What can you hear, see, smell, touch or taste? Think about each sensation."},
+    {"3", "What are your arms, fingers or legs doing? Are you moving quickly or slowly?"},
+    {"4", "Think about your breathing. Where can you feel it – in your chest, belly or nose? Can you slow it down, so you're taking deep breaths and feeling more relaxed? "},
+    {"5", "If other thoughts pop up, just notice them then gently bring your attention back to your breathing."},
+    {"", "The more you practice being mindful, the easier it becomes. Try to keep it up for 5 minutes, or for as long as you like."}
+  ] %>
+  <%= component "toolbox_label", conn: @conn, text: "Imagine a peaceful place", dropdown: [
+    {"", "Think of a place where you feel safe and comfortable. This might be somewhere you've been, but it could be a place you've seen on TV or in a picture."},
+    {"", "Once you've got a place in mind, follow these steps:"},
+    {"1", "Focus on the colours you can see in your safe, peaceful place."},
+    {"2", "Now think about the sounds you can hear."},
+    {"3", "What smells do you notice about your peaceful place?"},
+    {"4", "Think about the sensations on your skin. Can you feel the wind? Do you feel hot or cold?"},
+    {"5", "Give your peaceful place a name. Think of this name to return there whenever you like."},
+    {"6", "Stay in your safe, peaceful place until you feel calm and relaxed. "},
+    {"7", "When you're ready, open your eyes and notice what you see and hear all around you."}
+  ] %>
+  <%= component "toolbox_label", conn: @conn, text: "Relax every muscle", dropdown: [
+    {"", "You can use this exercise to melt away unpleasant feelings. Practice these steps when you're calm to make them easier to follow along when you're anxious or worried. This is also a great way to fall asleep at night."},
+    {"", "Start by sitting or lying somewhere quiet and comfortable, then work through this list:"},
+    {"1", "Think about your toes. Clench your toes as hard as you can for 5 seconds, then relax them completely. "},
+    {"2", "Can you feel the difference when squeezing and releasing your toes? Does it feel good when you release the tension?"},
+    {"3", "Move your attention to your calves. Repeat the exercise. Clench and then release just this part of your body."},
+    {"4", "One at a time squeeze and release your thighs, bottom, back, tummy, arms, shoulders and neck. Then do your mouth, eyes and forehead."},
+    {"5", "Lie or sit still and enjoy the feeling of calm relaxation as long as you like."}
+  ] %>
+
+  <%= component "toolbox_label", conn: @conn, text: "Build a bubble", dropdown: [
+      {"", "The 'bubble technique' can help you feel calmer or safer."},
+      {"1", "Imagine you're inside a soft bubble. It's <b>your</b> bubble, so make it any colour and size you like."},
+      {"2", "Fill your bubble with your favourite things: music, memories, smells and anything else that makes you feel good."},
+      {"3", "Your bubble is a safe space. Imagine that someone tries to upset you but their words just bounce off the bubble without hurting you."},
+      {"", "Practice the bubble technique every day if you can, even for a few minutes. After a while, you'll be able to imagine a bubble around you whenever you feel stressed."}
+  ] %>
 </div>
