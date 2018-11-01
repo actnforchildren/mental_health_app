@@ -1,4 +1,6 @@
 <%= component "day_week_month_bar", conn: @conn %>
-<div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month">
-  <p>Ooops, this monthly log is not right</p>
+<div class="pv3">
+  <div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month">
+    <p>Ooops, this monthly log is not right</p>
+  </div>
 </div>
