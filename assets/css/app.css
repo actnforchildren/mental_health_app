@@ -206,3 +206,7 @@ ul > li, ol > li {
   width: 7px;
   border-radius: 50%;
 }
+
+.w1-7 {
+  width: 1.7rem;
+}
