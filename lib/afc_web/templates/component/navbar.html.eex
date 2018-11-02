@@ -1,18 +1,25 @@
 <div class="flex fixed bottom-0 h3 w-100 tc bg-white bt afc-b--pink z-max">
-  <%= link to: page_path(@conn, :show, ""), class: "dib w-25 pointer link pt2 black" do %>
-    <p class="db mv1">Home</p>
+  <%= link to: page_path(@conn, :show, ""), class: "dib w-25 pointer link black" do %>
+    <p class="dot mv1 center <%= display_nav_dot(@conn, "home") %>"></p>
+    <img src="<%= static_path(@conn, src_image("diary")) %>" alt="" class="w1-7 mr2 center">
+    <p class="">Home</p>
   <% end %>
 
-  <%= link to: page_path(@conn, :show, "toolbox"), class: "dib w-25 pointer link pt2 black" do %>
-    <p class="db mv1">Toolbox</p>
+  <%= link to: page_path(@conn, :show, "toolbox"), class: "dib w-25 pointer link black" do %>
+    <p class="dot mv1 center <%= display_nav_dot(@conn, "toolbox") %>"></p>
+    <img src="<%= static_path(@conn, src_image("toolbox")) %>" alt="" class="w1-7 mr2 center">
+    <p class="">Toolbox</p>
   <% end %>
 
-  <%= link to: page_path(@conn, :show, "help"), class: "dib w-25 pointer link pt2 black" do %>
-    <p class="db mv1">Help</p>
+  <%= link to: page_path(@conn, :show, "help"), class: "dib w-25 pointer link black" do %>
+    <p class="dot mv1 center <%= display_nav_dot(@conn, "help") %>"></p>
+    <img src="<%= static_path(@conn, "/images/help.svg") %>" alt="" class="w1-7 mr2 center">
+    <p class="afc-red">Help</p>
   <% end %>
 
-  <%= link to: session_path(@conn, :delete, @current_user), method: "delete", class: "dib w-25 pointer link pt2 black" do %>
-    <p class="db mv1">Log out</p>
+  <%= link to: session_path(@conn, :delete, @current_user), method: "delete", class: "dib w-25 pointer link black" do %>
+    <p class="dot mv1 center"></p>
+    <img src="<%= static_path(@conn, src_image("logout")) %>" alt="" class="w1-7 mr2 center">
+    <p class="">Log out</p>
   <% end %>
-
 </div>

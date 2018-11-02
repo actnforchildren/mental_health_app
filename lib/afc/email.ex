@@ -14,6 +14,18 @@ defmodule Afc.Email do
     |> text_body(txt)
   end
 
+  def share_report(user, log, dates) do
+    from = Map.fetch!(System.get_env(), "EMAIL_FROM")
+    html = report_to_html(user, log, dates)
+
+    new_email()
+    |> to(user.trusted_adult.email)
+    |> from(from)
+    |> subject("New shared report")
+    |> html_body(html)
+    |> text_body("")
+  end
+
   def emotion_log_to_html(emotion_log, emotion) do
     logged_at = "#{emotion_log.inserted_at.day}-#{emotion_log.inserted_at.month}-#{emotion_log.inserted_at.year}"
 
@@ -25,6 +37,17 @@ defmodule Afc.Email do
     #{list_reasons(emotion)}
     <p>reason text:</p>
     <p>#{emotion.reason}</p>
+    """
+  end
+
+  def report_to_html(user, log, dates) do
+    {from, to} = dates
+    emotions = emotion_to_report(log)
+
+    """
+    <p>Report from #{from} to #{to}</p>
+    <p>User: #{user.username}</p>
+    <p>#{emotions}</p>
     """
   end
 
@@ -52,5 +75,11 @@ defmodule Afc.Email do
     #{emotion_log.emotion}
     #{emotion.reason}
     """
+  end
+
+  def emotion_to_report(log) do
+    log
+    |> Enum.map(fn [emotion, count] -> "#{emotion}: #{count}" end)
+    |> Enum.join(", ")
   end
 end

@@ -1,0 +1,8 @@
+<div class="tc mt5 mb3 f4">
+  <%= form_for @conn, "/share/report", fn f -> %>
+    <input type="hidden" name="from" value="<%= @from %>">
+    <input type="hidden" name="to" value="<%= @to %>">
+    <input type="hidden" name="url" value="<%= @conn.request_path %>?<%= @conn.query_string %>&shared=true">
+    <%= submit("Share with Trusted Adult", class: "b ba afc-b--red ph3 pv2 br2 bg-white pointer") %>
+  <% end %>
+</div>
