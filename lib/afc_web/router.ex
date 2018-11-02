@@ -30,6 +30,7 @@ defmodule AfcWeb.Router do
     get "/weekly-log", WeeklyLogController, :index
     get "/monthly-log", MonthlyLogController, :index
     resources "/share", ShareController, only: [:create]
+    resources "/share/report", ShareReportController, only: [:create]
     resources "/", PageController, only: [:index, :show]
   end
 end

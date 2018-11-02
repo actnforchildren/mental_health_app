@@ -3,6 +3,7 @@ defmodule AfcWeb.MonthlyLogController do
   alias Afc.{Emotion, Repo, DateHelper}
 
   def index(conn, params) do
+    shared = params["shared"]
     {from, to} = DateHelper.get_month_dates(params["from"], params["to"])
     case DateHelper.parseDates(from, to) do
       %{from: from_date, to: to_date} ->
@@ -24,7 +25,10 @@ defmodule AfcWeb.MonthlyLogController do
           date_title: date_title,
           next_month: next_month,
           previous_month: previous_month,
-          total_days: number_of_days
+          total_days: number_of_days,
+          from: from,
+          to: to,
+          shared: shared
       _ ->
         render conn, "error.html"
       end
