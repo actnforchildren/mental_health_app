@@ -29,10 +29,10 @@
   <%= component "toolbox_label", conn: @conn, text: "Write how you feel", dropdown: [
     {"", "Showing or saying how you feel can help you feel better. Writing in a diary or notebook is one way to do this."},
     {"", "Try writing or drawing:"},
-    {"1", "How you feel"},
-    {"2", "What happened to make you feel like this"},
+    {"1", "How you feel?"},
+    {"2", "What happened to make you feel like this?"},
     {"3", "What do you wish could be different?"},
-    {"4", "Anything else that's on your mind."},
+    {"4", "Anything else that's on your mind?"},
     {"", "Whatever you're feeling, it's OK to write it down and let it out!"}
   ] %>
 </div>
