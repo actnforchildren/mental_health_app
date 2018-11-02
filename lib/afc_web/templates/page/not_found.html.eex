@@ -1,3 +1,5 @@
-<div class="w-90 bg-white center br2 pa3 mb5">
-  <p>Page not found</p>
+<div class="pv3">
+  <div class="w-90 bg-white center br2 pa3 mb5">
+    <p>Page not found</p>
+  </div>
 </div>

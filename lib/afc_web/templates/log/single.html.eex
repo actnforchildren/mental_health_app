@@ -1,7 +1,7 @@
 <%= component "day_week_month_bar", conn: @conn %>
 
 <div class="pv3">
-  <div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month">
+  <div class="w-90 w-60-ns bg-white center br2 pa3 mb5 mt-day-week-month">
     <p id="elm-calendar" class="pa3 ba br2 dib mb4"></p>
     <p class="tc f3 mb3"><%= @date_title %></p>
     <div class="center w-100 tc f4">

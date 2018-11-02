@@ -1,19 +1,19 @@
 <div class="w-100 bg-white center pa3 mb5 f4">
   <div class="mv4 flex center w5-1">
-    <p class="mv2">
-      <%= emoji_img_tag(static_path(@conn, src_image(@emotion)), class: "w-25 fl") %>
+    <div class="w-40 pl3 mt2">
+      <%= emoji_img_tag(static_path(@conn, src_image(@emotion))) %>
+    </div>
+    <p class="mv2 w-60 pl3">
       Sometimes it's hard to know what it is that you're feeling. But often,
       our bodies can give us helpful clues.
     </p>
   </div>
-  <div class="mv4 flex center w5-1">
-    <p>
-      I recommend you try to describe how you’re feeling, and send this
-      information to someone. That way they can help you understand this better.
-    </p>
-  </div>
+  <p class="w5-1 mv2 center">
+    I recommend you try to describe how you’re feeling, and send this
+    information to someone. That way they can help you understand this better.
+  </p>
 
-  <div class="">
+  <div class="mw7 center mb3">
     <%= custom_render_autoform(
       @conn,
       :create,
@@ -28,12 +28,5 @@
       ],
       assigns: [changeset: @changeset])
     %>
-  </div>
-
-  <div class="mv4 center tc lh-title">
-    <p class="mb2">
-      If you can’t wait for someone to read your email, you can call Childline
-      to talk to someone right now.</p>
-    <p class="b afc-red">Call Childline on 0800 1111</p>
   </div>
 </div>
