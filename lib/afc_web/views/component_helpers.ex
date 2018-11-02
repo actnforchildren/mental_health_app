@@ -35,6 +35,7 @@ defmodule AfcWeb.ComponentHelpers do
     end
   end
 
+
   def format_emotion_name(emotion) do
     case emotion do
       :else -> "Something else"
@@ -42,6 +43,26 @@ defmodule AfcWeb.ComponentHelpers do
       _ ->  emotion
             |> Atom.to_string()
             |> String.capitalize()
+    end
+  end
+
+
+  def display_nav_dot(conn, nav_name) do
+    path = nav_dot_helper(conn)
+
+    if path == nav_name, do: "afc-bg-red", else: ""
+  end
+
+  defp nav_dot_helper(conn) do
+    toolbox_paths =  ~w(/toolbox /info)
+
+    cond do
+      Enum.any?(toolbox_paths, &String.contains?(conn.request_path, &1)) ->
+        "toolbox"
+      String.contains?(conn.request_path, "/help") ->
+        "help"
+      true ->
+        "home"
     end
   end
 end

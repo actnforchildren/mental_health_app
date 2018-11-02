@@ -1,10 +1,10 @@
 <%= component "day_week_month_bar", conn: @conn %>
 
 <div class="pv3">
-  <div class="w-90 bg-white center br2 pa3 mb5 mt-day-week-month">
+  <div class="w-90 w-60-ns bg-white center br2 pa3 mb5 mt-day-week-month">
     <p id="elm-calendar" class="pa3 ba br2 dib mb4">10th Oct 2019 (placeholder)</p>
     <p class="tc b f4 mb3">How are you feeling today?</p>
-    <div class="center w-90">
+    <div class="center w-90 w-40-l">
 
       <div class="flex justify-between pt3 ph1 mb3">
         <%= component "emoji_helper", [text: "Happy", page: "happy", conn: @conn] %>
