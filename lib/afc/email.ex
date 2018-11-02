@@ -28,9 +28,13 @@ defmodule Afc.Email do
 
   def emotion_log_to_html(emotion_log, emotion) do
     logged_at = "#{emotion_log.inserted_at.day}-#{emotion_log.inserted_at.month}-#{emotion_log.inserted_at.year}"
-
+    feeling = if emotion_log.emotion == :else do
+                emotion.feeling <> " (Something else)"
+              else
+                emotion_log.emotion
+              end
     """
-    <strong>#{emotion_log.emotion}</strong>
+    <strong>#{feeling}</strong>
     <p>#{logged_at}</p>
     <p>username: #{emotion_log.user.username}</p>
     <p>reason list:</p>
