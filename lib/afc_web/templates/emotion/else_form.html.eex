@@ -13,7 +13,6 @@
           exclude: Emotion.reason_list() ++ [:reason]
         },
         "</div>",
-        "<p class=\"w-90 w-40-ns mv2 lh-title center\">Sometimes it’s hard to know what it is that you’re feeling.</p>",
         "<p class=\"w-90 w-40-ns lh-title center mb4\">I recommend you try to describe how you’re feeling, and send this information to someone. That way they can help you understand this better.</p>",
         "<div class=\"form-group-checklist w-60 w-40-ns center\">",
         {
