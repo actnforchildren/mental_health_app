@@ -1,4 +1,4 @@
-the Action for Children application allow users to record daily their emotions.
+the Action for Children application allow users to record their emotions.
 ![image](https://user-images.githubusercontent.com/6057298/48003870-9a077200-e107-11e8-92d0-9095e95b615f.png)
 
 The daily, weekly or monthly view show a resume of the logged emotions
@@ -50,6 +50,6 @@ EMAIL_TRUSTED_ADULT=...
 
 To create a new heroku app you can follow the Phoenix guide https://hexdocs.pm/phoenix/heroku.html
 
-Check that the heroku remote is defined `git remote -v`. For more information you can read the heroku deployement guide: https://devcenter.heroku.com/articles/git#creating-a-heroku-remote
+Check that the heroku remote is defined `git remote -v`. For more information you can read the heroku deployment guide: https://devcenter.heroku.com/articles/git#creating-a-heroku-remote
 
 To deploy a new branch you can run: `git push heroku your_branch:master`.
