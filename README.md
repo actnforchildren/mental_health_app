@@ -42,6 +42,6 @@ EMAIL_TRUSTED_ADULT=...
 
 To create a new heroku app you can follow the Phoenix guide https://hexdocs.pm/phoenix/heroku.html
 
-Check that the heroku remote is defined `git remote -v`. For more information you can read the heroku deployement guide: https://devcenter.heroku.com/articles/git#creating-a-heroku-remote
+Check that the heroku remote is defined `git remote -v`. For more information you can read the heroku deployment guide: https://devcenter.heroku.com/articles/git#creating-a-heroku-remote
 
 To deploy a new branch you can run: `git push heroku your_branch:master`.
