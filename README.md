@@ -1,3 +1,11 @@
+The Action for Children application allow users to record their emotions.
+![image](https://user-images.githubusercontent.com/6057298/48003870-9a077200-e107-11e8-92d0-9095e95b615f.png)
+
+The daily, weekly and monthly views allow the user to see a record of their previously logged emotions.
+
+![image](https://user-images.githubusercontent.com/6057298/48004048-100bd900-e108-11e8-86a5-611b240fcde7.png)
+
+
 # Setup
 
 You will need to have [Docker](https://docs.docker.com/install/)
@@ -9,6 +17,14 @@ and [Docker Compose](https://docs.docker.com/compose/install/) installed to run 
       `git clone git@github.com:actnforchildren/mental_health_app.git`
      then `cd mental_health_app`
 
+- create a .env file to define the environment variables:
+```
+MAILGUN_API_KEY=...
+MAILGUN_DOMAIN=...
+EMAIL_FROM=...
+EMAIL_TRUSTED_ADULT=...
+```
+
 - update the phoenix dependencies:
   `docker-compose run --rm app mix deps.get`
 
@@ -17,6 +33,13 @@ and [Docker Compose](https://docs.docker.com/compose/install/) installed to run 
 
 - create the database
   `docker-compose run --rm app mix ecto.create`
+
+- run the migrations:
+  `docker-compose run --rm app mix ecto.migrate`
+
+- create/add users:
+  `docker-compose run --rm app mix run priv/repo/create_test_users.exs`
+
 - run the application with
   `docker-compose up`
 
@@ -24,30 +47,9 @@ and [Docker Compose](https://docs.docker.com/compose/install/) installed to run 
 
 ## Deploy on Heroku
 
-Method based on https://hexdocs.pm/phoenix/heroku.html
 
-- Create the Heroku application
-  `heroku create --buildpack "https://github.com/HashNuke/heroku-buildpack-elixir.git"`
-  this will create a generated name for the app, ex: `tranquil-ravine-86379`
+To create a new heroku app you can follow the Phoenix guide https://hexdocs.pm/phoenix/heroku.html
 
-- Check that the new heroku remote has been added to git
-  `git remote -v`
+Check that the heroku remote is defined `git remote -v`. For more information you can read the heroku deployment guide: https://devcenter.heroku.com/articles/git#creating-a-heroku-remote
 
-- Add the static buildpack
-  `heroku buildpacks:add https://github.com/gjaldon/heroku-buildpack-phoenix-static.git`
-
-- Add the secret key base environment variable in Heroku
-
-## Create a new Phoenix application with Docker
-
-You don't need to do this section as the application is now generated.
-
-- Create a new Phoenix project:
-  `docker-compose run --rm app mix phx.new . --app afc`
-
-  answer yes to `The directory /app already exists. Are you sure you want to continue? [Yn]` and `Fetch and install dependencies? [Yn]`
-
-- On linux you will need to change the owner of the application (docker create the phoenix app with the root user)
- run `sudo chown -R $USER:$USER app/`
-
-- update the database configuration. Change the host to be the name of the service (ie db) in app/config/dev.exs
+To deploy a new branch you can run: `git push heroku your_branch:master`.
