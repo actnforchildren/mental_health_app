@@ -1,7 +1,7 @@
 The Action for Children application allow users to record their emotions.
 ![image](https://user-images.githubusercontent.com/6057298/48003870-9a077200-e107-11e8-92d0-9095e95b615f.png)
 
-The daily, weekly or monthly view show a resume of the logged emotions
+The daily, weekly and monthly views allow the user to see a record of their previously logged emotions.
 
 ![image](https://user-images.githubusercontent.com/6057298/48004048-100bd900-e108-11e8-86a5-611b240fcde7.png)
 
