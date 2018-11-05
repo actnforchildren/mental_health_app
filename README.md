@@ -1,3 +1,11 @@
+the Action for Children application allow users to record daily their emotions.
+![image](https://user-images.githubusercontent.com/6057298/48003870-9a077200-e107-11e8-92d0-9095e95b615f.png)
+
+The daily, weekly or monthly view show a resume of the logged emotions
+
+![image](https://user-images.githubusercontent.com/6057298/48004048-100bd900-e108-11e8-86a5-611b240fcde7.png)
+
+
 # Setup
 
 You will need to have [Docker](https://docs.docker.com/install/)
