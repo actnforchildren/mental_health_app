@@ -1,5 +1,5 @@
 <label>
-  <input type="checkbox" id="emotion_info_checkbox" class="dn">
+  <input type="checkbox" id="emotion_info_checkbox" class="dn toolbox-title-section">
   <div class="pl3 flex items-center bb afc-b--pink" id="emotion-info-name-div">
     <p class="pv4 pl2 w-80 w-90-ns"><%= @text %></p>
     <div class="w-20 w-10-ns tc" id="emotion_info_arrow">
