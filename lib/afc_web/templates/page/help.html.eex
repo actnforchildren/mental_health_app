@@ -5,13 +5,13 @@
     <p class="mv2 b tc">If you need help now,</p>
     <p class="mt2 mb3 b tc">don't wait</p>
     <img src="<%= static_path(@conn, src_image("chat-icon")) %>" alt="" class="w2 db">
-    <p class="mv2">Speak to an adult that you trust, if you would like more advice on how you are feeling.</p>
+    <p class="mv2">If you don't have anyone you can talk to right now, and you need immediate support with how you're feeling.</p>
   </div>
   <%= component "container", class: "mt3" %>
 
   <div class="mw5 center mv4 pv2">
     <img src="<%= static_path(@conn, src_image("phone-icon")) %>" alt="" class="w2 db">
-    <p class="mt2 mb3">Speak to an adult that you trust, if you would like more advice on how you are feeling.</p>
+    <p class="mt2 mb3">If you don't have anyone you can talk to right now, and you need immediate support with how you're feeling.</p>
     <a href="tel:08001111" class="mv2 b underline afc-red">Call Childline on 0800 1111</a>
   </div>
 
