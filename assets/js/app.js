@@ -77,7 +77,7 @@ function swipe(el, callback){
   var distX;
   var distY;
   var threshold = 50;
-  var restraint = 100;
+  var restraint = 50;
 
   el.addEventListener('touchstart', function(e){
     var touchobj = e.changedTouches[0];
