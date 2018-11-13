@@ -28,6 +28,7 @@ if (toolboxSections.length > 0) {
             i.classList.remove("selected-items")
           })
           this.classList.add("selected-items");
+          this.nextElementSibling.scrollIntoView();
         } else {
           this.classList.remove("selected-items");
         }
