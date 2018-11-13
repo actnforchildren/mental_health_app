@@ -210,3 +210,7 @@ ul > li, ol > li {
 .w1-7 {
   width: 1.7rem;
 }
+
+.pwd {
+    -webkit-text-security: disc;
+}
