@@ -91,11 +91,10 @@ function swipe(el, callback){
     var touchobj = e.changedTouches[0]
     distX = touchobj.pageX - startX;
     distY = touchobj.pageY - startY;
-
-    if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+    if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint && Math.abs(distY) < Math.abs(distX)) {
       swipedir = (distX < 0) ? 'left' : 'right';
-    }
 
+    }
     callback(swipedir);
   }, false);
 }
