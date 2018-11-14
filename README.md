@@ -1,4 +1,10 @@
-The Action for Children application allow users to record their emotions.
+# Action for Children Mental Health App
+
+The Action for Children application allow users to record their emotions, analyse the reasons for them, review their emotions
+over a period of time and share them with their trusted adult.
+
+The application is currently in prototype and user testing stages, with a specific set of alpha users.
+
 ![image](https://user-images.githubusercontent.com/6057298/48003870-9a077200-e107-11e8-92d0-9095e95b615f.png)
 
 The daily, weekly and monthly views allow the user to see a record of their previously logged emotions.
