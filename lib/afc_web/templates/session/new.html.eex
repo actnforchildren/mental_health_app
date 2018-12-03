@@ -11,10 +11,10 @@
     <%= text_input f, :username, placeholder: "Enter Username", class: "username f3 tc mv4", onfocus: "this.placeholder=''" %>
 
     <div class="flex w5 center pa3 justify-around mb5">
-      <%= text_input f, :pin1, class: "w2 pin tc f3 br0 ph0 pwd", type: "number" %>
-      <%= text_input f, :pin2, class: "w2 pin tc f3 br0 ph0 pwd", type: "number" %>
-      <%= text_input f, :pin3, class: "w2 pin tc f3 br0 ph0 pwd", type: "number" %>
-      <%= text_input f, :pin4, class: "w2 pin tc f3 br0 ph0 pwd", type: "number" %>
+      <%= text_input f, :pin1, class: "w2 pin tc f3 br0 ph0 pwd", type: "number", min: "0", max: "9" %>
+      <%= text_input f, :pin2, class: "w2 pin tc f3 br0 ph0 pwd", type: "number", min: "0", max: "9" %>
+      <%= text_input f, :pin3, class: "w2 pin tc f3 br0 ph0 pwd", type: "number", min: "0", max: "9" %>
+      <%= text_input f, :pin4, class: "w2 pin tc f3 br0 ph0 pwd", type: "number", min: "0", max: "9" %>
     </div>
 
     <%= submit "Go", class: "w4-5 h2-5 afc-bg-green bn br2", id: "login-btn" %>
