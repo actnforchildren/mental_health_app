@@ -1,5 +1,11 @@
 <div class="w-100 bg-white center pa3 mb5 f4 tc">
   <p class="b f3 mt5 mb4 w-90 center ph3">Enter your Username and PIN to login</p>
+
+  <% error = get_flash(@conn, :error) %>
+  <%= if error do %>
+    <div class="red" role="alert"><%= get_flash(@conn, :error) %></div>
+  <% end %>
+
   <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
 
     <%= text_input f, :username, placeholder: "Enter Username", class: "username f3 tc mv4", onfocus: "this.placeholder=''" %>

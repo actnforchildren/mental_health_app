@@ -18,11 +18,17 @@ defmodule AfcWeb.SessionController do
         case Auth.login_with_username_and_pin(conn, username, pin) do
           {:ok, conn} ->
             redirect(conn, to: page_path(conn, :index))
+
           {:error, conn} ->
-            render(conn, "new.html")
+            conn
+            |> put_flash(:error, "You have entered an invalid username or password")
+            |> render("new.html")
         end
+
       _ ->
-        render(conn, "new.html")
+        conn
+        |> put_flash(:error, "You have entered an invalid username or password")
+        |> render("new.html")
     end
   end
 
