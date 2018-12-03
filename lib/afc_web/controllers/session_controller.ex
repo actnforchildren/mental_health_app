@@ -12,6 +12,7 @@ defmodule AfcWeb.SessionController do
 
   def create(conn, %{"session" => %{"username" => username, "pin1" => pin1, "pin2" => pin2, "pin3" => pin3, "pin4" => pin4}}) do
     pin = "#{pin1}#{pin2}#{pin3}#{pin4}"
+    username = String.downcase(username)
 
     case Integer.parse(pin) do
       {pin, ""} ->

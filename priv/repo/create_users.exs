@@ -10,12 +10,13 @@ adult =
   end
 
 users = [
-      {"user1234", 1234},
+      {"USER1234", 1234},
       ]
 
 Enum.each(
   users,
   fn({username, pin}) ->
+    username = String.downcase(username)
     Repo.insert!(%User{
       username: username,
       pin: pin,
