@@ -1,6 +1,9 @@
 alias Afc.{Repo, TrustedAdult, User}
 alias Afc.Emotion.{Angry, Else, EmotionLog, Excited, Happy, Sad, Unsure, Worried}
 
+dummy_user = System.get_env("DUMMY_USER") |> String.downcase()
+trusted_adult_email = Map.fetch!(System.get_env(), "EMAIL_TRUSTED_ADULT")
+
 emotions = [
   {Angry, "angry"},
   {Else, "else"},
@@ -11,7 +14,7 @@ emotions = [
   {Worried, "worried"}
 ]
 
-trusted_adult_email = Map.fetch!(System.get_env(), "EMAIL_TRUSTED_ADULT")
+trusted_adult_email = trusted_adult_email
 adult =
   case Repo.get_by(TrustedAdult, email: trusted_adult_email) do
     nil ->
@@ -20,9 +23,9 @@ adult =
       adult
   end
 
-case Repo.get_by(User, username: System.get_env("DUMMY_USER")) do
+case Repo.get_by(User, username: dummy_user) do
   nil ->
-    user = Repo.insert!(%User{username: System.get_env("DUMMY_USER"), pin: 1234, trusted_adult_id: adult.id})
+    user = Repo.insert!(%User{username: dummy_user, pin: 1234, trusted_adult_id: adult.id})
 
     today = Timex.today() |> Timex.to_naive_datetime()
     rest_of_week = Enum.map(1..6, &Timex.shift(today, days: -&1))
