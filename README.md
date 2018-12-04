@@ -2,7 +2,10 @@
 
 ## Why?
 
-To improve children’s resilience in coping with change at a particularly difficult transitionary time in their lives (10-13 years of age), by using a tool that is already part of their daily lives (phones and mobile apps).
+To improve children’s resilience in coping with change at a particularly
+difficult transitionary time in their lives (10-13 years of age),
+by using a tool that is already part of their daily lives (phones and mobile
+apps).
 
 ## What?
 
@@ -82,3 +85,20 @@ you can read the heroku deployment guide:
 https://devcenter.heroku.com/articles/git#creating-a-heroku-remote
 
 To deploy a new branch you can run: `git push heroku your_branch:master`.
+
+### Create users
+
+As the application was being tested with a specific set of alpha users all the
+users accounts were manually created. There is no way to create users in app.
+
+To create a user, go to `priv/repo/create_users.exs`. Update the following line
+```elixir
+users = [
+      {"USER1234", 1234},
+      ]
+```
+with the username and pin you would like to use. These can be sourced from an
+env variable if you want to keep them secret.
+
+Once you have added your variables, in your terminal run the command
+`mix run priv/repo/create_users.exs`. 
