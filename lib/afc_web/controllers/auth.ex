@@ -19,7 +19,7 @@ defmodule AfcWeb.Auth do
   def login_with_username_and_pin(conn, username, pin) do
     user = Repo.get_by(User, username: username)
 
-    if user && user.pin == pin do
+    if user && user.pin == pin && System.get_env("LOGIN_ENABLE") == "true" do
       {:ok, login(conn, user)}
     else
       {:error, conn}

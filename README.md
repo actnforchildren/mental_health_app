@@ -53,6 +53,7 @@ MAILGUN_API_KEY=...
 MAILGUN_DOMAIN=...
 EMAIL_FROM=...
 EMAIL_TRUSTED_ADULT=...
+LOGIN_ENABLE=true
 ```
 
 - update the phoenix dependencies:
@@ -74,6 +75,9 @@ EMAIL_TRUSTED_ADULT=...
   `docker-compose up`
 
 - visit the app on localhost:4000
+
+You can define the value of `LOGIN_ENABLE` to `false` when you want to
+block users to access the application
 
 ### Deploy on Heroku
 
@@ -101,4 +105,4 @@ with the username and pin you would like to use. These can be sourced from an
 env variable if you want to keep them secret.
 
 Once you have added your variables, in your terminal run the command
-`mix run priv/repo/create_users.exs`. 
+`mix run priv/repo/create_users.exs`.
